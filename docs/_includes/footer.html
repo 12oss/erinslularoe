@@ -1,0 +1,192 @@
+<!--schema generator: http://www.51blocks.com/jsongen.html -->
+<!-- usage: http://searchengineland.com/schema-markup-structured-data-seo-opportunities-site-type-231077-->
+<script type="application/ld+json">
+{
+
+}
+</script>
+<footer class="footer">
+	
+</footer>
+<!-- defer of css via google pagespeed-->
+<script>
+var cb = function() {
+	var l = document.createElement('link');
+	l.rel = 'stylesheet';
+	l.href = '{{ site.github.url }}/dist/css/min/erins-llr.min.css';
+	var h = document.getElementsByTagName('head')[0];
+	h.parentNode.insertBefore(l, h);
+};
+var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+	webkitRequestAnimationFrame || msRequestAnimationFrame;
+if (raf) raf(cb);
+else window.addEventListener('load', cb);
+</script>
+<script async src="{{ site.github.url }}/dist/js/min/erins-llr.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script>
+//async breaks my smooth scroll to....
+//function f1 is defined around everything so that I can async all js and then run all this code after page loads in
+function f1() {
+
+	//Google Analytics-->
+
+
+
+	//end Google Analytics-->
+
+
+	//tool tip
+	$("[data-toggle=tooltip]").tooltip();
+	//end tooltip
+
+	//tabs
+	$('.nav-tabs a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		})
+		//end tabs
+
+
+	//lazysizes
+	$(document).on('lazybeforesizes', function(e) {
+		//use width of parent node instead of the image width itself
+		//e.detail.width = $(e.target).closest(':not(picture)').innerWidth() || e.detail.width;
+
+	});
+
+	window.lazySizesConfig = window.lazySizesConfig || {};
+	window.lazySizesConfig.loadMode = 2;
+	window.lazySizesConfig.preloadAfterLoad = true;
+	window.lazySizesConfig.expand = 9;
+	window.lazySizesConfig.customMedia = {
+		'sm': '(max-width: 767px)',
+		'md': '(max-width: 991px)',
+		'lg': '(max-width: 1200px)'
+	};
+
+	//ISOTOPE with Lazysizes
+	$(document).ready(function() {
+		$('#grid-container').each(function() {
+
+			var $isotope = $('.isotope-box');
+
+			$isotope.isotope({
+				layoutMode: 'masonry',
+				// set itemSelector so .grid-sizer is not used in layout
+				itemSelector: '.grid-item',
+				// use element for option
+				masonry: {
+					columnWidth: '.grid-sizer'
+				},
+				percentPosition: true
+					// slow transitions
+					//transitionDuration: '.4s'
+			});
+
+			$isotope[0].addEventListener('load', (function() {
+				var runs;
+				var update = function() {
+
+					$isotope.isotope('layout');
+					runs = false;
+
+				};
+				return function() {
+					if (!runs) {
+						runs = true;
+						//timeout will affect the load of images
+						setTimeout(update, 0);
+					}
+				};
+			}()), true);
+		});
+	});
+	//end lazysizes
+
+	//DYNAMICALLY load youtube videos
+	// Find all the YouTube video embedded on a page
+	var videos = document.getElementsByClassName("youtube");
+
+	for (var i = 0; i < videos.length; i++) {
+
+		var youtube = videos[i];
+
+		// Based on the YouTube ID, we can easily find the thumbnail image
+		var img = document.createElement("img");
+		//img.setAttribute("src", "http://i.ytimg.com/vi/" + youtube.id + "/hqdefault.jpg");
+		img.setAttribute("class", "thumb");
+		img.setAttribute("width", "100%");
+
+
+		// Overlay the Play icon to make it look like a video player
+		var circle = document.createElement("div");
+		circle.setAttribute("class", "circle");
+		youtube.appendChild(img);
+		youtube.appendChild(circle);
+
+		// Attach an onclick event to the YouTube Thumbnail
+		youtube.onclick = function() {
+
+			// Create an iFrame with autoplay set to true
+			var iframe = document.createElement("iframe");
+			iframe.setAttribute("src",
+				"https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1&border=0&wmode=opaque&enablejsapi=1&rel=0");
+
+
+			// Replace the YouTube thumbnail with YouTube HTML5 Player
+			this.parentNode.replaceChild(iframe, this);
+
+		};
+	}
+
+
+	//fancybox
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			//Use Alt atribute
+			beforeShow: function() {
+				var alt = this.element.find('img').attr('alt');
+
+				this.inner.find('img').attr('alt', alt);
+
+				this.title = alt;
+				/* Disable right click */
+				$.fancybox.wrap.bind("contextmenu", function(e) {
+					return false;
+				});
+			},
+
+			// For all options go to http://fancyapps.com/fancybox/
+			padding: 4,
+			fitToView: true,
+			autoSize: true,
+			closeClick: true,
+			openEffect: 'fade',
+			closeEffect: 'fade',
+			helpers: {
+				title: {
+					type: 'outside'
+				},
+				overlay: {
+					css: {
+						'background': 'rgba(0, 0, 0, 0.9)'
+					},
+					locked: false
+				}
+
+			},
+			mouseWheel: false,
+			nextEffect: 'fade',
+			prevEffect: 'fade'
+		});
+	});
+	//end fancybox
+	// smooth scrolling-->
+	$('a').smoothScroll();
+	//end smooth scrolling-->
+}
+
+//runs everything after page loads
+window.onload = f1;
+</script>
