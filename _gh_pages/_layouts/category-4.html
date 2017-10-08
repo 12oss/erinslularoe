@@ -1,0 +1,66 @@
+---
+layout: default
+title: Category
+---
+<style type="text/css">
+	#cat-wrapper a:hover,
+	#cat-wrapper a:focus {
+		text-decoration: none
+	}
+
+
+	#cat-wrapper p.post-title {
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		padding-top: 10px;
+		font-family: museo-sans;
+		font-weight: 100;
+		text-align: center;
+		color: #333;
+	}
+
+	.post-preview {
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+
+	#cat-wrapper button {
+		text-align: center !important;
+		left: 50%;
+		position: relative;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+		margin-top: 0px !important;
+	}
+
+	.post-preview button, .post-preview button:hover{
+		border: none !important;
+	}
+</style>
+<div id="cat-wrapper" class="fluid-container max-1080">
+	{% include size-refinements.html %}
+	<div class="row">
+		<div class="col-xs-12">
+			{% include nav-breadcrumbs.html path=page.path title=page.title %}
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<!--<h2>{{ page.title }}</h2>-->
+	{% unless page.content == '' %}
+	<p>{{ page.content }}</p>
+	{% endunless %}
+	{% for post in site.categories[page.category] reversed %}
+	<div class="post-preview col-xs-12 col-sm-4 col-md-3">
+		<a href="{{ post.url | prepend: site.baseurl | remove: 'index.html' }}">
+			<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ site.baseurl }}/inventory-images/{{ post.style }}/{{ post.sku }}.jpg" alt="LuLaRoe {{ post.title }}" width="100%">
+			<p class="post-title lato-black">
+				{{ post.title }}
+			</p>
+			<button class="btn btn-primary" type="button">View</button>
+		</a>
+	</div>
+	{% endfor %}
+</div>

@@ -1,0 +1,62 @@
+<style type="text/css">
+	.size-refinements {
+		padding-left: 15px;
+	}
+
+	.size-refinements ul li:hover,
+	.size-refinements ul:hover {
+		border-bottom: none !important;
+	}
+
+	.size-refinements ul li {
+		list-style: none;
+		display: inline;
+	}
+
+	.size-refinements ul li a {
+		margin-bottom: 5px !important;
+	}
+
+	.size-refinements ul {
+		padding-left: 0px !important
+	}
+
+	.size-refinements h5 a.btn {
+		padding-left: 0px !important;
+		color: #333 !important;
+		font-weight: 900 !important;
+		padding-bottom: 0px !important;
+	}
+	/*.size-refinements li+li:before {
+		content: " / ";
+		padding: 0 10px;
+	}*/
+</style>
+<div class="size-refinements">
+	<h5>
+		<a href="{{ site.baseurl }}/styles/{{ page.style }}" class="btn btn-sm btn-link" type="button">{{ page.size-refine }} Sizing</a>
+	</h5>
+	<ul>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-parent }}/{{ page.style }}/2" class="btn btn-sm btn-default" type="button">2</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-parent }}/{{ page.style }}/4" class="btn btn-sm btn-default" type="button">4</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-parent }}/{{ page.style }}/6" class="btn btn-sm btn-default" type="button">6</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-parent }}/{{ page.style }}/8" class="btn btn-sm btn-default" type="button">8</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-parent }}/{{ page.style }}/10" class="btn btn-sm btn-default" type="button">10</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-parent }}/{{ page.style }}/12" class="btn btn-sm btn-default" type="button">12</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-parent }}/{{ page.style }}/14" class="btn btn-sm btn-default" type="button">14</a>
+		</li>
+	</ul>
+</div>
