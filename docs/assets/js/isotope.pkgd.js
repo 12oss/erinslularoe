@@ -18,13 +18,13 @@
 
 
 
-	// -------------------------- utils -------------------------- //
+	/* -------------------------- utils -------------------------- */
 
 	var slice = Array.prototype.slice;
 
 	function noop() {}
 
-	// -------------------------- definition -------------------------- //
+	/* -------------------------- definition -------------------------- */
 
 	function defineBridget($) {
 
@@ -33,7 +33,7 @@
 			return;
 		}
 
-		// -------------------------- addOptionMethod -------------------------- //
+		/* -------------------------- addOptionMethod -------------------------- */
 
 		/**
 		 * adds option method -> $().plugin('option', {...})
@@ -55,7 +55,7 @@
 			};
 		}
 
-		// -------------------------- plugin bridge -------------------------- //
+		/* -------------------------- plugin bridge -------------------------- */
 
 		// helper function for logging errors
 		// $.error breaks jQuery chaining
@@ -70,11 +70,11 @@
 		 * @param {Function} PluginClass - constructor class
 		 */
 		function bridge(namespace, PluginClass) {
-			// add to jQuery fn namespace
+			// add to jQuery fn namespace */
 			$.fn[namespace] = function(options) {
 				if (typeof options === 'string') {
-					// call plugin method when first argument is a string
-					// get arguments for method
+					// call plugin method when first argument is a string */
+					// get arguments for method */
 					var args = slice.call(arguments, 1);
 
 					for (var i = 0, len = this.length; i < len; i++) {
@@ -90,25 +90,25 @@
 							continue;
 						}
 
-						// trigger method with arguments
+						// trigger method with arguments */
 						var returnValue = instance[options].apply(instance, args);
 
-						// break look and return first value if provided
+						// break look and return first value if provided */
 						if (returnValue !== undefined) {
 							return returnValue;
 						}
 					}
-					// return this if no return value
+					// return this if no return value */
 					return this;
 				} else {
 					return this.each(function() {
 						var instance = $.data(this, namespace);
 						if (instance) {
-							// apply options & init
+							// apply options & init */
 							instance.option(options);
 							instance._init();
 						} else {
-							// initialize new instance
+							// initialize new instance */
 							instance = new PluginClass(this, options);
 							$.data(this, namespace, instance);
 						}
@@ -118,7 +118,7 @@
 
 		}
 
-		// -------------------------- bridget -------------------------- //
+		/* -------------------------- bridget -------------------------- */
 
 		/**
 		 * converts a Prototypical class into a proper jQuery plugin
@@ -135,14 +135,14 @@
 
 	}
 
-	// transport
+	// transport */
 	if (typeof define === 'function' && define.amd) {
-		// AMD
+		// AMD */
 		define('jquery-bridget/jquery.bridget', ['jquery'], defineBridget);
 	} else if (typeof exports === 'object') {
 		defineBridget(require('jquery'));
 	} else {
-		// get jquery from browser global
+		// get jquery from browser global */
 		defineBridget(window.jQuery);
 	}
 
@@ -169,7 +169,7 @@
 
 	function getIEEvent(obj) {
 		var event = window.event;
-		// add event.target
+		// add event.target */
 		event.target = event.target || event.srcElement || obj;
 		return event;
 	}
@@ -205,7 +205,7 @@
 			try {
 				delete obj[type + fn];
 			} catch (err) {
-				// can't delete window object properties
+				// can't delete window object properties */
 				obj[type + fn] = undefined;
 			}
 		};
@@ -216,7 +216,7 @@
 		unbind: unbind
 	};
 
-	// ----- module definition ----- //
+	/* ----- module definition ----- */
 
 	if (typeof define === 'function' && define.amd) {
 		// AMD
@@ -250,7 +250,7 @@
 	 */
 	function EventEmitter() {}
 
-	// Shortcuts to improve speed and size
+	// Shortcuts to improve speed and size */
 	var proto = EventEmitter.prototype;
 	var exports = this;
 	var originalGlobalValue = exports.EventEmitter;
@@ -301,8 +301,8 @@
 		var response;
 		var key;
 
-		// Return a concatenated array of all matching events if
-		// the selector is a regular expression.
+		// Return a concatenated array of all matching events if */
+		// the selector is a regular expression. */
 		if (evt instanceof RegExp) {
 			response = {};
 			for (key in events) {
@@ -471,7 +471,7 @@
 	 * @return {Object} Current instance of EventEmitter for chaining.
 	 */
 	proto.addListeners = function addListeners(evt, listeners) {
-		// Pass through to manipulateListeners
+		// Pass through to manipulateListeners */
 		return this.manipulateListeners(false, evt, listeners);
 	};
 
@@ -486,7 +486,7 @@
 	 * @return {Object} Current instance of EventEmitter for chaining.
 	 */
 	proto.removeListeners = function removeListeners(evt, listeners) {
-		// Pass through to manipulateListeners
+		// Pass through to manipulateListeners */
 		return this.manipulateListeners(true, evt, listeners);
 	};
 
@@ -508,23 +508,23 @@
 		var single = remove ? this.removeListener : this.addListener;
 		var multiple = remove ? this.removeListeners : this.addListeners;
 
-		// If evt is an object then pass each of its properties to this method
+		// If evt is an object then pass each of its properties to this method */
 		if (typeof evt === 'object' && !(evt instanceof RegExp)) {
 			for (i in evt) {
-				if (evt.hasOwnProperty(i) && (value = evt[i])) {
-					// Pass the single listener straight through to the singular method
+				if (evt.hasOwnProperty(i) && (value = evt[i])) { 
+					// Pass the single listener straight through to the singular method */
 					if (typeof value === 'function') {
 						single.call(this, i, value);
 					} else {
-						// Otherwise pass back to the multiple function
+						// Otherwise pass back to the multiple function */
 						multiple.call(this, i, value);
 					}
 				}
 			}
 		} else {
-			// So evt must be a string
-			// And listeners must be an array of listeners
-			// Loop over it and pass each one to the multiple method
+			// So evt must be a string */
+			// And listeners must be an array of listeners */
+			// Loop over it and pass each one to the multiple method */
 			i = listeners.length;
 			while (i--) {
 				single.call(this, evt, listeners[i]);
@@ -548,19 +548,19 @@
 		var events = this._getEvents();
 		var key;
 
-		// Remove different things depending on the state of evt
+		// Remove different things depending on the state of evt */
 		if (type === 'string') {
-			// Remove all listeners for the specified event
+			// Remove all listeners for the specified event */
 			delete events[evt];
 		} else if (evt instanceof RegExp) {
-			// Remove all events matching the regex.
+			// Remove all events matching the regex. */
 			for (key in events) {
 				if (events.hasOwnProperty(key) && evt.test(key)) {
 					delete events[key];
 				}
 			}
 		} else {
-			// Remove all listeners in all events
+			// Remove all listeners in all events */
 			delete this._events;
 		}
 
@@ -598,8 +598,8 @@
 				i = listeners[key].length;
 
 				while (i--) {
-					// If the listener returns true then it shall be removed from the event
-					// The function is executed either with a basic call or an apply if there is an args array
+					// If the listener returns true then it shall be removed from the event */
+					// The function is executed either with a basic call or an apply if there is an args array */
 					listener = listeners[key][i];
 
 					if (listener.once === true) {
@@ -685,7 +685,7 @@
 		return EventEmitter;
 	};
 
-	// Expose the class either via AMD, CommonJS or the global object
+	// Expose the class either via AMD, CommonJS or the global object */
 	if (typeof define === 'function' && define.amd) {
 		define('eventEmitter/EventEmitter', [], function() {
 			return EventEmitter;
@@ -719,15 +719,15 @@
 			return;
 		}
 
-		// test standard property first
+		// test standard property first */
 		if (typeof docElemStyle[propName] === 'string') {
 			return propName;
 		}
 
-		// capitalize
+		// capitalize */
 		propName = propName.charAt(0).toUpperCase() + propName.slice(1);
 
-		// test vendor specific properties
+		// test vendor specific properties */
 		var prefixed;
 		for (var i = 0, len = prefixes.length; i < len; i++) {
 			prefixed = prefixes[i] + propName;
@@ -737,14 +737,14 @@
 		}
 	}
 
-	// transport
+	// transport */
 	if (typeof define === 'function' && define.amd) {
-		// AMD
+		// AMD */
 		define('get-style-property/get-style-property', [], function() {
 			return getStyleProperty;
 		});
 	} else if (typeof exports === 'object') {
-		// CommonJS for Component
+		// CommonJS for Component */
 		module.exports = getStyleProperty;
 	} else {
 		// browser global
@@ -766,12 +766,12 @@
 
 
 
-	// -------------------------- helpers -------------------------- //
+	/* -------------------------- helpers -------------------------- */
 
-	// get a number from a string, not a percentage
+	// get a number from a string, not a percentage */
 	function getStyleSize(value) {
 		var num = parseFloat(value);
-		// not a percent like '100%', and a number
+		// not a percent like '100%', and a number */
 		var isValid = value.indexOf('%') === -1 && !isNaN(num);
 		return isValid && num;
 	}
@@ -783,7 +783,7 @@
 			console.error(message);
 		};
 
-	// -------------------------- measurements -------------------------- //
+	/* -------------------------- measurements -------------------------- */
 
 	var measurements = [
 		'paddingLeft',
@@ -820,7 +820,7 @@
 
 	function defineGetSize(getStyleProperty) {
 
-		// -------------------------- setup -------------------------- //
+		/* -------------------------- setup -------------------------- */
 
 		var isSetup = false;
 
@@ -832,7 +832,7 @@
 		 * For Firefox bug https://bugzilla.mozilla.org/show_bug.cgi?id=548397
 		 */
 		function setup() {
-			// setup once
+			// setup once */
 			if (isSetup) {
 				return;
 			}
@@ -859,7 +859,7 @@
 				};
 			})();
 
-			// -------------------------- box sizing -------------------------- //
+			/* -------------------------- box sizing -------------------------- */
 
 			boxSizingProp = getStyleProperty('boxSizing');
 
@@ -885,24 +885,24 @@
 
 		}
 
-		// -------------------------- getSize -------------------------- //
+		/* -------------------------- getSize -------------------------- */
 
 		function getSize(elem) {
 			setup();
 
-			// use querySeletor if elem is string
+			// use querySeletor if elem is string */
 			if (typeof elem === 'string') {
 				elem = document.querySelector(elem);
 			}
 
-			// do not proceed on non-objects
+			// do not proceed on non-objects */
 			if (!elem || typeof elem !== 'object' || !elem.nodeType) {
 				return;
 			}
 
 			var style = getStyle(elem);
 
-			// if hidden, everything is 0
+			// if hidden, everything is 0 */
 			if (style.display === 'none') {
 				return getZeroSize();
 			}
@@ -914,13 +914,13 @@
 			var isBorderBox = size.isBorderBox = !!(boxSizingProp &&
 				style[boxSizingProp] && style[boxSizingProp] === 'border-box');
 
-			// get all measurements
+			// get all measurements */
 			for (var i = 0, len = measurements.length; i < len; i++) {
 				var measurement = measurements[i];
 				var value = style[measurement];
 				value = mungeNonPixel(elem, value);
 				var num = parseFloat(value);
-				// any 'auto', 'medium' value will be 0
+				// any 'auto', 'medium' value will be 0 */
 				size[measurement] = !isNaN(num) ? num : 0;
 			}
 
@@ -933,18 +933,18 @@
 
 			var isBorderBoxSizeOuter = isBorderBox && isBoxSizeOuter;
 
-			// overwrite width and height if we can get it from style
+			// overwrite width and height if we can get it from style */
 			var styleWidth = getStyleSize(style.width);
 			if (styleWidth !== false) {
 				size.width = styleWidth +
-					// add padding and border unless it's already including it
+					// add padding and border unless it's already including it */
 					(isBorderBoxSizeOuter ? 0 : paddingWidth + borderWidth);
 			}
 
 			var styleHeight = getStyleSize(style.height);
 			if (styleHeight !== false) {
 				size.height = styleHeight +
-					// add padding and border unless it's already including it
+					// add padding and border unless it's already including it */
 					(isBorderBoxSizeOuter ? 0 : paddingHeight + borderHeight);
 			}
 
@@ -1119,13 +1119,13 @@
 		}
 	})();
 
-	// ----- match ----- //
+	/* ----- match ----- */
 
 	function match(elem, selector) {
 		return elem[matchesMethod](selector);
 	}
 
-	// ----- appendToFragment ----- //
+	/* ----- appendToFragment ----- */
 
 	function checkParent(elem) {
 		// not needed if already has parent
@@ -1136,7 +1136,7 @@
 		fragment.appendChild(elem);
 	}
 
-	// ----- query ----- //
+	/* ----- query ----- */
 
 	// fall back to using QSA
 	// thx @jonathantneal https://gist.github.com/3062955
@@ -1156,14 +1156,14 @@
 		return false;
 	}
 
-	// ----- matchChild ----- //
+	/* ----- matchChild ----- */
 
 	function matchChild(elem, selector) {
 		checkParent(elem);
 		return match(elem, selector);
 	}
 
-	// ----- matchesSelector ----- //
+	/* ----- matchesSelector ----- */
 
 	var matchesSelector;
 
@@ -1234,7 +1234,7 @@
 
 	var utils = {};
 
-	// ----- extend ----- //
+	/* ----- extend ----- */
 
 	// extends objects
 	utils.extend = function(a, b) {
@@ -1244,20 +1244,20 @@
 		return a;
 	};
 
-	// ----- modulo ----- //
+	/* ----- modulo ----- */
 
 	utils.modulo = function(num, div) {
 		return ((num % div) + div) % div;
 	};
 
-	// ----- isArray ----- //
+	/* ----- isArray ----- */
 
 	var objToString = Object.prototype.toString;
 	utils.isArray = function(obj) {
 		return objToString.call(obj) == '[object Array]';
 	};
 
-	// ----- makeArray ----- //
+	/* ----- makeArray ----- */
 
 	// turn element or nodeList into an array
 	utils.makeArray = function(obj) {
@@ -1277,7 +1277,7 @@
 		return ary;
 	};
 
-	// ----- indexOf ----- //
+	/* ----- indexOf ----- */
 
 	// index of helper cause IE8
 	utils.indexOf = Array.prototype.indexOf ? function(ary, obj) {
@@ -1291,7 +1291,7 @@
 		return -1;
 	};
 
-	// ----- removeFrom ----- //
+	/* ----- removeFrom ----- */
 
 	utils.removeFrom = function(ary, obj) {
 		var index = utils.indexOf(ary, obj);
@@ -1300,7 +1300,7 @@
 		}
 	};
 
-	// ----- isElement ----- //
+	/* ----- isElement ----- */
 
 	// http://stackoverflow.com/a/384380/182183
 	utils.isElement = (typeof HTMLElement == 'function' || typeof HTMLElement == 'object') ?
@@ -1312,7 +1312,7 @@
 				obj.nodeType == 1 && typeof obj.nodeName == 'string';
 		};
 
-	// ----- setText ----- //
+	/* ----- setText ----- */
 
 	utils.setText = (function() {
 		var setTextProperty;
@@ -1325,7 +1325,7 @@
 		return setText;
 	})();
 
-	// ----- getParent ----- //
+	/* ----- getParent ----- */
 
 	utils.getParent = function(elem, selector) {
 		while (elem != document.body) {
@@ -1336,7 +1336,7 @@
 		}
 	};
 
-	// ----- getQueryElement ----- //
+	/* ----- getQueryElement ----- */
 
 	// use element as selector string
 	utils.getQueryElement = function(elem) {
@@ -1346,7 +1346,7 @@
 		return elem;
 	};
 
-	// ----- handleEvent ----- //
+	/* ----- handleEvent ----- */
 
 	// enable .ontype to trigger from .addEventListener( elem, 'type' )
 	utils.handleEvent = function(event) {
@@ -1356,7 +1356,7 @@
 		}
 	};
 
-	// ----- filterFindElements ----- //
+	/* ----- filterFindElements ----- */
 
 	utils.filterFindElements = function(elems, selector) {
 		// make array of elems
@@ -1389,7 +1389,7 @@
 		return ffElems;
 	};
 
-	// ----- debounceMethod ----- //
+	/* ----- debounceMethod ----- */
 
 	utils.debounceMethod = function(_class, methodName, threshold) {
 		// original method
@@ -1411,7 +1411,7 @@
 		};
 	};
 
-	// ----- htmlInit ----- //
+	/* ----- htmlInit ----- */
 
 	// http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
 	utils.toDashed = function(str) {
@@ -1458,7 +1458,7 @@
 		});
 	};
 
-	// -----  ----- //
+	/* -----  ----- */
 
 	return utils;
 
@@ -1507,7 +1507,7 @@
 }(window, function factory(window, EventEmitter, getSize, getStyleProperty, utils) {
 	'use strict';
 
-	// ----- helpers ----- //
+	/* ----- helpers ----- */
 
 	var getComputedStyle = window.getComputedStyle;
 	var getStyle = getComputedStyle ?
@@ -1527,7 +1527,7 @@
 		return true;
 	}
 
-	// -------------------------- CSS3 support -------------------------- //
+	/* -------------------------- CSS3 support -------------------------- */
 
 	var transitionProperty = getStyleProperty('transition');
 	var transformProperty = getStyleProperty('transform');
@@ -1562,7 +1562,7 @@
 		return cache;
 	})();
 
-	// -------------------------- Item -------------------------- //
+	/* -------------------------- Item -------------------------- */
 
 	function Item(element, layout) {
 		if (!element) {
@@ -1754,7 +1754,7 @@
 		this.position.y = parseInt(y, 10);
 	};
 
-	// ----- transition ----- //
+	/* ----- transition ----- */
 
 	/**
 	 * @param {Object} style - CSS
@@ -1856,7 +1856,7 @@
 
 	Item.prototype.transition = Item.prototype[transitionProperty ? '_transition' : '_nonTransition'];
 
-	// ----- events ----- //
+	/* ----- events ----- */
 
 	Item.prototype.onwebkitTransitionEnd = function(event) {
 		this.ontransitionend(event);
@@ -1934,7 +1934,7 @@
 		this.css(cleanTransitionStyle);
 	};
 
-	// ----- show/hide/remove ----- //
+	/* ----- show/hide/remove ----- */
 
 	// remove element from DOM
 	Item.prototype.removeElem = function() {
@@ -2105,13 +2105,13 @@
 }(window, function factory(window, eventie, EventEmitter, getSize, utils, Item) {
 	'use strict';
 
-	// ----- vars ----- //
+	/* ----- vars ----- */
 
 	var console = window.console;
 	var jQuery = window.jQuery;
 	var noop = function() {};
 
-	// -------------------------- Outlayer -------------------------- //
+	/* -------------------------- Outlayer -------------------------- */
 
 	// globally unique identifiers
 	var GUID = 0;
@@ -2257,7 +2257,7 @@
 		return elems;
 	};
 
-	// ----- init & layout ----- //
+	/* ----- init & layout ----- */
 
 	/**
 	 * lays out all items
@@ -2525,7 +2525,7 @@
 		}
 	};
 
-	// -------------------------- ignore & stamps -------------------------- //
+	/* -------------------------- ignore & stamps -------------------------- */
 
 
 	/**
@@ -2654,7 +2654,7 @@
 		return offset;
 	};
 
-	// -------------------------- resize -------------------------- //
+	/* -------------------------- resize -------------------------- */
 
 	// enable event handlers for listeners
 	// i.e. resize -> onresize
@@ -2729,7 +2729,7 @@
 		return hasSizes && size.innerWidth !== this.size.innerWidth;
 	};
 
-	// -------------------------- methods -------------------------- //
+	/* -------------------------- methods -------------------------- */
 
 	/**
 	 * add items to Outlayer instance
@@ -2885,7 +2885,7 @@
 		}
 	};
 
-	// ----- destroy ----- //
+	/* ----- destroy ----- */
 
 	// remove and disable Outlayer instance
 	Outlayer.prototype.destroy = function() {
@@ -2912,7 +2912,7 @@
 
 	};
 
-	// -------------------------- data -------------------------- //
+	/* -------------------------- data -------------------------- */
 
 	/**
 	 * get Outlayer instance from element
@@ -2926,7 +2926,7 @@
 	};
 
 
-	// -------------------------- create Outlayer class -------------------------- //
+	/* -------------------------- create Outlayer class -------------------------- */
 
 	/**
 	 * create a layout class
@@ -2963,11 +2963,11 @@
 
 		Layout.Item.prototype = new Item();
 
-		// -------------------------- declarative -------------------------- //
+		/* -------------------------- declarative -------------------------- */
 
 		utils.htmlInit(Layout, namespace);
 
-		// -------------------------- jQuery bridge -------------------------- //
+		/* -------------------------- jQuery bridge -------------------------- */
 
 		// make into jQuery plugin
 		if (jQuery && jQuery.bridget) {
@@ -2977,7 +2977,7 @@
 		return Layout;
 	};
 
-	// ----- fin ----- //
+	/* ----- fin ----- */
 
 	// back in global
 	Outlayer.Item = Item;
@@ -3016,7 +3016,7 @@
 }(window, function factory(Outlayer) {
 	'use strict';
 
-	// -------------------------- Item -------------------------- //
+	/* -------------------------- Item -------------------------- */
 
 	// sub-class Outlayer Item
 	function Item() {
@@ -3135,7 +3135,7 @@
 		}
 	})();
 
-	// -----  ----- //
+	/* -----  ----- */
 
 	// for horizontal layout modes, check vertical size
 	LayoutMode.prototype.needsVerticalResizeLayout = function() {
@@ -3147,7 +3147,7 @@
 		return hasSizes && size.innerHeight != this.isotope.size.innerHeight;
 	};
 
-	// ----- measurements ----- //
+	/* ----- measurements ----- */
 
 	LayoutMode.prototype._getMeasurement = function() {
 		this.isotope._getMeasurement.apply(this, arguments);
@@ -3187,7 +3187,7 @@
 		return firstItem && firstItem.element && getSize(firstItem.element);
 	};
 
-	// ----- methods that should reference isotope ----- //
+	/* ----- methods that should reference isotope ----- */
 
 	LayoutMode.prototype.layout = function() {
 		this.isotope.layout.apply(this.isotope, arguments);
@@ -3198,7 +3198,7 @@
 		this.size = this.isotope.size;
 	};
 
-	// -------------------------- create -------------------------- //
+	/* -------------------------- create -------------------------- */
 
 	LayoutMode.modes = {};
 
@@ -3265,7 +3265,7 @@
 
 
 
-	// -------------------------- masonryDefinition -------------------------- //
+	/* -------------------------- masonryDefinition -------------------------- */
 
 	// create an Outlayer layout class
 	var Masonry = Outlayer.create('masonry');
@@ -3463,7 +3463,7 @@
 }(window, function factory(LayoutMode, Masonry) {
 	'use strict';
 
-	// -------------------------- helpers -------------------------- //
+	/* -------------------------- helpers -------------------------- */
 
 	// extend objects
 	function extend(a, b) {
@@ -3473,7 +3473,7 @@
 		return a;
 	}
 
-	// -------------------------- masonryDefinition -------------------------- //
+	/* -------------------------- masonryDefinition -------------------------- */
 
 	// create an Outlayer layout class
 	var MasonryMode = LayoutMode.create('masonry');
@@ -3701,11 +3701,11 @@
 
 
 
-	// -------------------------- vars -------------------------- //
+	/* -------------------------- vars -------------------------- */
 
 	var jQuery = window.jQuery;
 
-	// -------------------------- helpers -------------------------- //
+	/* -------------------------- helpers -------------------------- */
 
 	var trim = String.prototype.trim ?
 		function(str) {
@@ -3725,7 +3725,7 @@
 			return elem.innerText;
 		};
 
-	// -------------------------- isotopeDefinition -------------------------- //
+	/* -------------------------- isotopeDefinition -------------------------- */
 
 	// create an Outlayer layout class
 	var Isotope = Outlayer.create('isotope', {
@@ -3776,7 +3776,7 @@
 	};
 
 
-	// -------------------------- layout -------------------------- //
+	/* -------------------------- layout -------------------------- */
 
 	Isotope.prototype._initLayoutMode = function(name) {
 		var Mode = LayoutMode.modes[name];
@@ -3880,7 +3880,7 @@
 		});
 	};
 
-	// -------------------------- filter -------------------------- //
+	/* -------------------------- filter -------------------------- */
 
 	Isotope.prototype._filter = function(items) {
 		var filter = this.options.filter;
@@ -3940,7 +3940,7 @@
 		};
 	};
 
-	// -------------------------- sorting -------------------------- //
+	/* -------------------------- sorting -------------------------- */
 
 	/**
 	 * @params {Array} elems
@@ -3983,7 +3983,7 @@
 		}
 	};
 
-	// ----- munge sorter ----- //
+	/* ----- munge sorter ----- */
 
 	// encapsulate this, as we just need mungeSorter
 	// other functions in here are just for munging
@@ -4050,7 +4050,7 @@
 		}
 	};
 
-	// ----- sort method ----- //
+	/* ----- sort method ----- */
 
 	// sort filteredItem order
 	Isotope.prototype._sort = function() {
@@ -4089,7 +4089,7 @@
 		};
 	}
 
-	// -------------------------- methods -------------------------- //
+	/* -------------------------- methods -------------------------- */
 
 	// get layout mode
 	Isotope.prototype._mode = function() {
@@ -4127,7 +4127,7 @@
 		return this._mode().needsResizeLayout();
 	};
 
-	// -------------------------- adding & removing -------------------------- //
+	/* -------------------------- adding & removing -------------------------- */
 
 	// HEADS UP overwrites default Outlayer appended
 	Isotope.prototype.appended = function(elems) {
@@ -4248,7 +4248,7 @@
 		return returnValue;
 	};
 
-	// ----- helper methods ----- //
+	/* ----- helper methods ----- */
 
 	/**
 	 * getter method for getting filtered item elements
@@ -4262,7 +4262,7 @@
 		return elems;
 	};
 
-	// -----  ----- //
+	/* -----  ----- */
 
 	return Isotope;
 

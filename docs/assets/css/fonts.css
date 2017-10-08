@@ -4,41 +4,17 @@
 /*
 
 TYPEKIT
-font-family: "proxima-nova",sans-serif;
-font-family:"proxima-nova-sc-osf-condensed",sans-serif
+font-family: "museo-sans",sans-serif;
+font-family: "azo-sans-uber",sans-serif;
+font-family:"dapifer",serif;
 */
-
-.proxima-nova-light {
-	font-family: "proxima-nova", sans-serif;
-	font-weight: 100;
-}
-
-.proxima-nova-reg {
-	font-family: "proxima-nova", sans-serif;
-	font-weight: 400;
-}
-
-.proxima-nova-bold {
-	font-family: "proxima-nova", sans-serif;
-	font-weight: 600;
-	letter-spacing: 0px;
-}
-
-.proxima-nova-black {
-	font-family: "proxima-nova", sans-serif;
-	font-weight: 800;
-}
-
-.proxima-nova-condensed {
-	font-family: "proxima-nova-sc-osf-condensed", sans-serif
-}
 
 h1,
 .h1 {
-	font-family: 'proxima-nova', sans-serif;
-	font-weight: 700;
-	text-transform: uppercase;
+	text-transform: inherit;
+	font-family: "museo-sans", sans-serif;
 	letter-spacing: -1px;
+	font-weight: 900;
 }
 
 .h2,
@@ -51,9 +27,10 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'proxima-nova', sans-serif;
-	font-weight: 400;
-	letter-spacing: -1px;
+	text-transform: inherit;
+	font-family: "museo-sans", sans-serif;
+	letter-spacing: 0px;
+	font-weight: 900;
 }
 
 .txt-uppercase {
@@ -70,9 +47,9 @@ h6 {
 
 p,
 .p {
-	font-family: "proxima-nova", sans-serif;
+	font-family: "museo-sans", sans-serif;
 	font-weight: 400;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	letter-spacing: 0px;
 }
 
@@ -83,7 +60,7 @@ ul.starred li {
 	/* not needed, just to add space between the li's */
 	list-style: none;
 	/* Get rid of the default bullet points */
-	font-family: "proxima-nova", sans-serif;
+	font-family: "museo-sans", sans-serif;
 	font-weight: 400;
 	font-size: 1.4rem;
 	letter-spacing: 0px;
@@ -119,7 +96,8 @@ ul.starred li:before {
 	color: white;
 	text-shadow: 0 0 20px black, 0 0 10px black, 0 0 20px black, 0 0 10px black;
 	z-index: 100;
-	font-family: "proxima-nova-sc-osf-condensed", sans-serif;
+	font-family: "museo-sans", sans-serif;
+	font-weight: 700;
 	padding-left: 15px;
 	padding-right: 15px;
 }
@@ -132,7 +110,8 @@ ul.starred li:before {
 	color: white;
 	text-shadow: 0 0 20px black, 0 0 10px black, 0 0 20px black, 0 0 10px black;
 	z-index: 100;
-	font-family: "proxima-nova-sc-osf-condensed", sans-serif;
+	font-family: "museo-sans", sans-serif;
+	font-weight: 700;
 	text-align: right;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -146,7 +125,8 @@ ul.starred li:before {
 	color: white;
 	text-shadow: 0 0 20px black, 0 0 10px black, 0 0 20px black, 0 0 10px black;
 	z-index: 100;
-	font-family: "proxima-nova-sc-osf-condensed", sans-serif;
+	font-family: "museo-sans", sans-serif;
+	font-weight: 700;
 	text-align: center;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
@@ -198,23 +178,28 @@ h6 {
 	line-height: inherit;
 }
 
-.copy-container-left {
+.copy-container-left,
+.txt-left {
 	text-align: left;
 }
 
-.copy-container-left-always {
+.copy-container-left-always,
+.text-left-m {
 	text-align: left;
 }
 
-.copy-container-center {
+.copy-container-center,
+.txt-center {
 	text-align: center;
 }
 
-.copy-container-right {
+.copy-container-right,
+.txt-right {
 	text-align: right;
 }
 
-.copy-container-right-always {
+.copy-container-right-always,
+.txt-right-m {
 	text-align: right;
 }
 
@@ -224,6 +209,7 @@ h6 {
 	-moz-text-align-last: center;
 	text-align-last: center;
 }
+
 
 
 /*COLORS*/
@@ -337,6 +323,7 @@ a.light-inverse:hover,
 }
 
 
+
 /*end colors*/
 
 @media (max-width: 1199px) {
@@ -418,7 +405,7 @@ a.light-inverse:hover,
 	}
 	p,
 	.p {
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		letter-spacing: .3px;
 	}
 	.copy-container-left {
@@ -437,6 +424,8 @@ a.light-inverse:hover,
 	}
 }
 
+
+/*
 @media (max-width: 580px) {
 	p,
 	.p,
@@ -445,4 +434,4 @@ a.light-inverse:hover,
 	ul.starred li {
 		font-size: 1.2rem;
 	}
-}
+}*/

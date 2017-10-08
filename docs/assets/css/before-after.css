@@ -65,6 +65,9 @@ Main components
 	-webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0.3s 0.7s;
 	-moz-transition: -moz-transform 0.3s 0.7s, opacity 0.3s 0.7s;
 	transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
+	-webkit-box-shadow: inset 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
 }
 
 .cd-image-label.is-hidden {
@@ -81,6 +84,7 @@ Main components
 }
 
 .cd-resize-img {
+	border-right: 5px solid white !important;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -156,30 +160,9 @@ Main components
 	}
 }
 
-.cd-handle {
-	position: absolute;
-	height: 44px;
-	width: 44px;
-	/* center the element */
-	left: 50%;
-	top: 50%;
-	margin-left: -22px;
-	margin-top: -22px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, .7) url("{{ site.github.url }}/assets/css/images/cd-arrows.svg") no-repeat center center;
-	cursor: move;
-	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-	opacity: 0;
-	-webkit-transform: translate3d(0, 0, 0) scale(0);
-	-moz-transform: translate3d(0, 0, 0) scale(0);
-	-ms-transform: translate3d(0, 0, 0) scale(0);
-	-o-transform: translate3d(0, 0, 0) scale(0);
-	transform: translate3d(0, 0, 0) scale(0);
-}
-
 .cd-handle.draggable {
 	/* change background color when element is active */
-	background-color: rgba(190, 250, 150, .8);
+	background-color: rgba(190,160,130,.8);
 }
 
 .is-visible .cd-handle {

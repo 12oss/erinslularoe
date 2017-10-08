@@ -1,31 +1,86 @@
 /* CSS Document */
 
+section {
+	position: relative;
+}
 
+
+
+/*scroll to top*/
+
+div.back-to-top-parent {
+	width: 100%;
+	height: auto;
+	position: relative;
+	opacity: .5;
+	transition: all 250ms;
+}
+
+div.back-to-top-parent:hover {
+	opacity: 1;
+}
+
+div#back-to-top:before {
+	/*content: "\f077";*/
+	content: "\f106";
+	font-family: fontawesome;
+	display: inherit;
+	font-size: 20px;
+	line-height: 12px;
+}
+
+div#back-to-top:hover {
+	width: 54px;
+	height: 54px;
+	right: 8px;
+	bottom: 38px;
+}
+
+div#back-to-top {
+	transition: all 550ms;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+	width: 50px;
+	position: fixed;
+	right: 10px;
+	bottom: 40px;
+	background: rgba(20, 25, 30, .6);
+	color: rgba(195, 195, 195, 1);
+	border-radius: 50px;
+	height: 50px;
+	line-height: 18px;
+	margin: 12px;
+	padding: 9px;
+	font-weight: 900 !important;
+	border: 1px solid rgba(250, 250, 250, .4);
+	z-index: 9999;
+	letter-spacing: -.5px;
+}
+
+@media (max-width: 767px) {
+
+	div#back-to-top {
+		right: 2px;
+		bottom: 55px;
+		margin: 0px;
+		padding: 8px;
+	}
+	div#back-to-top:hover {
+		width: 54px;
+		height: 54px;
+		right: -2px;
+		bottom: 33px;
+	}
+}
+
+
+
+/**end scroll to top/
 /*vid player*/
 
 img.thumb {
 	cursor: pointer;
-}
-
-div.circle {
-	background-image: url('{{ site.github.url }}/assets/css/images/play-btn.svg');
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	position: absolute;
-	top: 0;
-	text-align: center;
-	width: 30%;
-	height: 30%;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	max-width: 150px;
-	max-height: 150px;
-	display: block;
-	margin: auto;
-	cursor: pointer;
-	transition: all .2s ease-in-out;
 }
 
 div.youtube:hover div.circle {
@@ -35,6 +90,7 @@ div.youtube:hover div.circle {
 	-o-transform: scale(1.1, 1.1);
 	transform: scale(1.1, 1.1);
 }
+
 
 
 /*lazyload lazysizes*/
@@ -53,6 +109,7 @@ div.youtube:hover div.circle {
 }
 
 
+
 /*end lazysizes*/
 
 
@@ -65,6 +122,7 @@ div.youtube:hover div.circle {
 }
 
 
+
 /*end fix for iphone fonts*/
 
 
@@ -75,8 +133,9 @@ div.youtube:hover div.circle {
 }
 
 a#myHeader1 {
-	color: rgba(110, 150, 40, 1);
+	color: #888B8D;
 }
+
 
 
 /* end the toggle hide/show css for pre code tags*/
@@ -88,6 +147,7 @@ a#myHeader1 {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 
 
 /*icons*/
@@ -106,10 +166,7 @@ a i {
 	min-width: 25px;
 }
 
-footer.footer a i:hover {
-	font-size: 1.3em;
-	vertical-align: -3px;
-}
+
 
 
 /*end icons*/
@@ -122,21 +179,20 @@ footer.footer a i:hover {
 }
 
 
+
 /*end LAZYLOAD*/
 
 
 /*to get footer working*/
 
-html,
-body {
-	margin: 0;
-	padding: 0;
-	min-height: 100%;
-	height: auto;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-ms-font-smoothing: antialiased;
+.site {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.site-content {
+	flex: 1;
 }
 
 body {
@@ -149,30 +205,18 @@ body {
 }
 
 .creative-content {
-	padding-bottom: 10vh;
+	/*padding-bottom: 10vh;*/
 	/*height of footer*/
-	padding-top: 51px;
+	/*padding-top: 51px;*/
 	/*accounts for header*/
 }
 
-.footer {
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	height: 10vh;
-	left: 0px;
-	/*  padding-bottom: 20px;
-    padding-top: 30px;*/
-	color: rgba(120, 120, 119, .9);
-	text-align: center;
-}
-
-nav.navbar-fixed-top > div {
+nav.navbar-fixed-top>div {
 	width: 90vw;
 	margin: auto;
 }
 
-footer.footer > div.row {
+footer.footer>div.row {
 	padding-top: 5vh;
 	padding-bottom: 5vh;
 }
@@ -182,12 +226,9 @@ footer.footer > div.row {
 	color: rgba(85, 85, 85, 1)
 }
 
-.footer a:hover {
-	border: none;
-}
 
 .footer p {
-	font-size: 10px
+	font-size: 12px
 }
 
 .footer span.social-footer-links {
@@ -199,7 +240,8 @@ footer.footer > div.row {
 }
 
 .footer .max-1080 {
-	border-top: solid #ccc 1px
+	border-top: solid #ccc 1px;
+	padding-top: 10px;
 }
 
 #footer-logo {
@@ -208,9 +250,13 @@ footer.footer > div.row {
 
 #footer-contacts div {
 	display: inline;
-	font-size: 1rem;
+	font-size: 12px;
 	padding-left: 4px;
 	padding-right: 4px;
+}
+
+#footer-copyright {
+	text-align: right
 }
 
 #footer-contacts address {
@@ -218,8 +264,6 @@ footer.footer > div.row {
 	display: inline;
 }
 
-
-/*#footer-social{text-align:right;}*/
 
 
 /*end footer content*/
@@ -264,6 +308,7 @@ a.scroll-to-top {
 }
 
 
+
 /*end scroll to top*/
 
 section.row {
@@ -301,6 +346,7 @@ hr {
 }
 
 
+
 /*FLEX */
 
 .row-eq-height {
@@ -323,6 +369,7 @@ hr {
 }
 
 
+
 /*end FLEX*/
 
 
@@ -339,6 +386,7 @@ hr {
 }
 
 
+
 /*global VERTICAL ALIGN (the full width banner class is in separate stylesheet) ***needs a height set to work properly*/
 
 .vertical-align {
@@ -349,6 +397,7 @@ hr {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
 
 
 /*vertical align all holds vertical alignment all the way thru mobile presentations*/
@@ -382,26 +431,33 @@ hr {
 }
 
 
+
 /*end GLOBALS*/
 
 
 /*BUTTONS*/
 
+
+/*
 .btn {
-	font-family: "proxima-nova-sc-osf-condensed", sans-serif;
+	font-family: "museo-sans", sans-serif;
+	font-weight: 700;
 	margin-top: 15px;
 	margin-left: 5px;
 	margin-right: 5px;
-	font-weight: 500;
-	/*border-radius: 500px;*/
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	padding: 8px 18px;
 	text-transform: uppercase;
-	letter-spacing: .5px;
+	letter-spacing: 0px;
 	transition: background-color 0.15s ease 0s, border-color 0.15s ease 0s, color 0.15s ease 0s;
-	border-radius: 6px;
+	border-radius: 0px;
 	box-shadow: 0px 0px 5px rgba(255, 255, 255, .3);
-}
+	display: inline-block;
+	width: auto;
+	height: auto;
+	margin-bottom: 10px;
+	cursor: pointer;
+}*/
 
 .btn-transparent {
 	background-color: transparent;
@@ -450,14 +506,6 @@ hr {
 	color: rgba(100, 100, 120, 1);
 }
 
-.btn {
-	display: inline-block;
-	width: auto;
-	height: auto;
-	margin-bottom: 10px;
-	cursor: pointer;
-}
-
 .action-link:after {
 	content: "\f054";
 	font-size: .885em;
@@ -496,14 +544,14 @@ hr {
 }
 
 .btn-primary:hover {
-	background-color: rgba(130, 170, 60, 1);
-	border: 1px solid rgba(230, 250, 200, 1);
+	background-color: #444;
+	border: none !important;
 	color: #fff;
 }
 
 .btn-primary {
-	background-color: rgba(110, 150, 40, 1);
-	border: 1px solid rgba(110, 150, 40, 1);
+	background-color: #888B8D;
+	border: none !important;
 	color: #fff;
 }
 
@@ -556,17 +604,17 @@ hr {
 }
 
 .btn-link {
-	color: rgba(110, 150, 40, 1);
+	color: #888B8D;
 	border: none;
 }
 
 .btn-link:hover {
-	color: rgba(110, 150, 40, 1);
+	color: #888B8D;
 	/*  border: rgba(190,190,190,1) 1px solid;*/
 }
 
 .btn-inverse.light-primary {
-	border: 1px solid rgba(230, 250, 200, 1);
+	border: 1px solid rgba(250, 250, 250, .5);
 }
 
 .btn-inverse.light-success {
@@ -586,6 +634,7 @@ hr {
 }
 
 
+
 /*end BUTTONS*/
 
 
@@ -594,6 +643,7 @@ hr {
 .text-light {
 	color: rgba(255, 255, 250, 1)
 }
+
 
 
 /**********************************/
@@ -615,7 +665,7 @@ h2.porto.title a:focus {
 }
 
 .row.porto {
-	margin: 0px;
+	margin: auto;
 }
 
 .porto .porto-item {
@@ -649,7 +699,7 @@ h2.porto.title a:focus {
 }
 
 .porto .porto-item.bg-primary:hover {
-	background-color: rgba(110, 150, 40, 1);
+	background-color: #888B8D;
 }
 
 .porto .porto-item.bg-success {
@@ -738,27 +788,6 @@ h2.porto.title a:focus {
 	text-shadow: 0 0 0 white;
 }
 
-.porto .porto-info {
-	height: 100%;
-	width: 100%;
-	left: 0;
-	position: absolute;
-	right: 0;
-	margin: auto;
-	bottom: 0;
-	top: 0;
-	opacity: 0;
-	box-sizing: border-box;
-	padding: 20px;
-	background: url('{{ site.github.url }}/assets/css/images/patterns/hover-black.png') repeat top left;
-	text-align: center;
-	-webkit-transition: .4s all ease;
-	transition: .4s all ease;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-
 .porto .porto-info .info-content {
 	margin: auto;
 }
@@ -773,7 +802,8 @@ h2.porto.title a:focus {
 	padding: 5px 10px;
 	width: 60px;
 	margin: 30px auto 0;
-	letter-spacing: 1.5px;
+	letter-spacing: 0px;
+	font-weight: 800;
 	-webkit-transition: 1s all ease;
 	transition: 1s all ease;
 	-webkit-transition-delay: .7;
@@ -789,11 +819,12 @@ h2.porto.title a:focus {
 	display: block;
 	margin: 0 auto;
 	color: #fff;
-	font-size: 22px;
-	letter-spacing: 2px;
-	line-height: 22px;
+	font-size: 26px;
+	letter-spacing: 0;
+	line-height: 24px;
+	font-style: italic;
+	text-transform: inherit;
 	text-align: center;
-	text-transform: uppercase;
 	opacity: 0;
 	-webkit-transition: .4s all ease-out;
 	transition: .4s all ease-out;
@@ -814,11 +845,12 @@ h2.porto.title a:focus {
 .porto.categories {
 	display: block;
 	opacity: 0;
-	font-size: 1.2rem;
-	line-height: 12px;
+	font-size: 1.4rem;
+	line-height: 16px;
+	padding-bottom: 15px;
+	padding-top: 15px;
 	position: relative;
 	margin: 0 auto;
-	padding-bottom: 15px;
 	color: #fff;
 	text-align: center;
 	-webkit-transition: .8s all ease;
@@ -829,6 +861,7 @@ h2.porto.title a:focus {
 	text-shadow: 0px 0px 30px white, 0px 0px 20px white, 0px 0px 20px white, 0px 0px 10px white, 0px 0px 10px white, 0px 0px 5px white;
 	width: 98%;
 }
+
 
 
 /**********************************/
@@ -843,9 +876,12 @@ h2.porto.title a:focus {
 
 @media (max-width: 991px) {
 	#footer-logo,
-	#footer-social,
-	#footer-copyright {
+	#footer-social {
 		text-align: center;
+		padding-bottom: 10px;
+	}
+	#footer-copyright {
+		text-align: right;
 		padding-bottom: 10px;
 	}
 	.footer .max-1080 {
@@ -868,6 +904,11 @@ h2.porto.title a:focus {
 	}
 	#footer-contacts address {
 		display: block;
+	}
+	#footer-copyright,
+	#footer-contacts {
+		text-align: center;
+		padding-bottom: 10px;
 	}
 	.creative-content {
 		/*  padding-bottom: 300px;*/

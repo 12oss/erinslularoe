@@ -1,19 +1,19 @@
-//https://codyhouse.co/gem/css-jquery-image-comparison-slider/
+/*https://codyhouse.co/gem/css-jquery-image-comparison-slider/*/
 jQuery(document).ready(function($) {
-	//check if the .cd-image-container is in the viewport 
-	//if yes, animate it
+	/*check if the .cd-image-container is in the viewport */
+	/*if yes, animate it*/
 	checkPosition($('.cd-image-container'));
 	$(window).on('scroll', function() {
 		checkPosition($('.cd-image-container'));
 	});
 
-	//make the .cd-handle element draggable and modify .cd-resize-img width according to its position
+	/*make the .cd-handle element draggable and modify .cd-resize-img width according to its position*/
 	$('.cd-image-container').each(function() {
 		var actual = $(this);
 		drags(actual.find('.cd-handle'), actual.find('.cd-resize-img'), actual, actual.find('.cd-image-label[data-type="original"]'), actual.find('.cd-image-label[data-type="modified"]'));
 	});
 
-	//upadate images label visibility
+	/*upadate images label visibility*/
 	$(window).on('resize', function() {
 		$('.cd-image-container').each(function() {
 			var actual = $(this);
@@ -32,7 +32,7 @@ function checkPosition(container) {
 	});
 }
 
-//draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+/*draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/*/
 function drags(dragElement, resizeElement, container, labelContainer, labelResizeElement) {
 	dragElement.on("mousedown vmousedown", function(e) {
 		dragElement.addClass('draggable');
@@ -48,7 +48,7 @@ function drags(dragElement, resizeElement, container, labelContainer, labelResiz
 		dragElement.parents().on("mousemove vmousemove", function(e) {
 			leftValue = e.pageX + xPosition - dragWidth;
 
-			//constrain the draggable element to move inside his container
+			/*constrain the draggable element to move inside his container*/
 			if (leftValue < minLeft) {
 				leftValue = minLeft;
 			} else if (leftValue > maxLeft) {

@@ -1,6 +1,6 @@
  @charset "UTF-8";
  /* CSS Document */
- 
+
  .vertical-align-a {
  	position: absolute;
  	top: 50%;
@@ -9,185 +9,188 @@
  	-ms-transform: translateY(-50%);
  	transform: translateY(-50%);
  }
- 
+
  .bg-full-md {
  	padding-bottom: 100vh;
  }
- 
+
  .bg-half-md {
  	padding-bottom: 50vh;
  }
- 
+
  .bg-third-md {
  	padding-bottom: 33vh;
  }
- 
+
  .bg-fourth-md {
  	padding-bottom: 25vh;
  }
- 
+
  .bg5-md {
  	width: 100%;
  	padding-bottom: 5%;
  	position: relative;
  }
- 
+
  .bg10-md {
  	width: 100%;
  	padding-bottom: 10%;
  	position: relative;
  }
- 
+
  .bg15-md {
  	width: 100%;
  	padding-bottom: 15%;
  	position: relative;
  }
- 
+
  .bg20-md {
  	width: 100%;
  	padding-bottom: 20%;
  	position: relative;
  }
- 
+
  .bg25-md {
  	width: 100%;
  	padding-bottom: 25%;
  	position: relative;
  }
- 
+
  .bg33-md {
  	width: 100%;
  	padding-bottom: 33.333%;
  	position: relative;
  }
- 
+
  .bg40-md {
  	width: 100%;
  	padding-bottom: 40%;
  	position: relative;
  }
- 
+
  .bg50-md {
  	width: 100%;
  	padding-bottom: 50%;
  	position: relative;
  }
- 
+
  .bg56-md {
  	width: 100%;
  	padding-bottom: 56.25%;
  	position: relative;
  }
- 
+
  .bg60-md {
  	width: 100%;
  	padding-bottom: 60%;
  	position: relative;
  }
- 
+
  .bg62-md {
  	width: 100%;
  	padding-bottom: 62.5%;
  	position: relative;
  }
- 
+
  .bg66-md {
  	width: 100%;
  	padding-bottom: 66.6666%;
  	position: relative;
  }
- 
+
  .bg75-md {
  	width: 100%;
  	padding-bottom: 75%;
  	position: relative;
  }
- 
+
  .bg80-md {
  	width: 100%;
  	padding-bottom: 80%;
  	position: relative;
  }
- 
+
  .bg100-md {
  	width: 100%;
  	padding-bottom: 100%;
  	position: relative;
  }
- 
+
  .bg120-md {
  	width: 100%;
  	padding-bottom: 120%;
  	position: relative;
  }
- 
+
  .bg125-md {
  	width: 100%;
  	padding-bottom: 125%;
  	position: relative;
  }
- 
+
  .bg133-md {
  	width: 100%;
  	padding-bottom: 133.333%;
  	position: relative;
  }
- 
+
  .bg140-md {
  	width: 100%;
  	padding-bottom: 140%;
  	position: relative;
  }
- 
+
  .bg150-md {
  	width: 100%;
  	padding-bottom: 150%;
  	position: relative;
  }
- 
+
  .bg156-md {
  	width: 100%;
  	padding-bottom: 156.25%;
  	position: relative;
  }
- 
+
  .bg160-md {
  	width: 100%;
  	padding-bottom: 160%;
  	position: relative;
  }
- 
+
  .bg162-md {
  	width: 100%;
  	padding-bottom: 162.5%;
  	position: relative;
  }
- 
+
  .bg166-md {
  	width: 100%;
  	padding-bottom: 166.6666%;
  	position: relative;
  }
- 
+
  .bg175-md {
  	width: 100%;
  	padding-bottom: 175%;
  	position: relative;
  }
- 
+
  .bg180-md {
  	width: 100%;
  	padding-bottom: 180%;
  	position: relative;
  }
- 
+
  .bg200-md {
  	width: 100%;
  	padding-bottom: 200%;
  	position: relative;
  }
- 
+
+ .bg5-xs,
+ .bg10-xs,
+ .bg15-xs,
  .bg20-xs,
  .bg25-xs,
  .bg33-xs,
@@ -264,56 +267,56 @@
  	background-position: center top;
  	background-repeat: no-repeat;
  }
- 
+
  .vh-auto-md {
  	height: auto;
  }
- 
+
  .vh25-md {
  	height: 25vh;
  	position: relative;
  }
- 
+
  .vh33-md {
  	height: 33vh;
  	position: relative;
  }
- 
+
  .vh40-md {
  	height: 40vh;
  	position: relative;
  }
- 
+
  .vh50-md {
  	height: 50vh;
  	position: relative;
  }
- 
+
  .vh66-md {
  	height: 66vh;
  	position: relative;
  }
- 
+
  .vh75-md {
  	height: 75vh;
  	position: relative;
  }
- 
+
  .vh80-md {
  	height: 80vh;
  	position: relative;
  }
- 
+
  .vh90-md {
  	height: 90vh;
  	position: relative;
  }
- 
+
  .vh100-md {
  	height: 100vh;
  	position: relative;
  }
- 
+
  .boxed-copy-left {
  	background-color: rgba(20, 20, 20, 0.6);
  	height: 100%;
@@ -324,7 +327,7 @@
  	top: 0;
  	width: 35%;
  }
- 
+
  .boxed-copy-right {
  	background-color: rgba(20, 20, 20, 0.6);
  	height: 100%;
@@ -335,7 +338,7 @@
  	top: 0;
  	width: 35%;
  }
- 
+
  .boxed-copy-center {
  	background-color: rgba(20, 20, 20, 0.6);
  	height: 100%;
@@ -346,8 +349,8 @@
  	top: 0;
  	width: 40%;
  }
- 
- div.left {
+
+ div.left-pos {
  	position: absolute;
  	top: 50%;
  	left: 3%;
@@ -360,8 +363,8 @@
  	padding: 20px;
  	text-shadow: 0px 0px 35px rgba(0, 0, 0, 1);
  }
- 
- div.center {
+
+ div.center-pos {
  	position: absolute;
  	top: 50%;
  	left: 5%;
@@ -375,8 +378,8 @@
  	padding: 20px;
  	text-shadow: 0px 0px 35px rgba(0, 0, 0, 1);
  }
- 
- div.right {
+
+ div.right-pos {
  	position: absolute;
  	top: 50%;
  	right: 3%;
@@ -389,7 +392,7 @@
  	padding: 20px;
  	text-shadow: 0px 0px 35px rgba(0, 0, 0, 1);
  }
- 
+
  .boxed-bg {
  	background-color: rgba(15, 15, 15, 0.6);
  	color: white;
@@ -404,9 +407,9 @@
  	-moz-transition: all .5s ease-in-out;
  	-webkit-transition: all .5s ease-in-out;
  }
- 
+
  @media (max-width: 1199px) {}
- 
+
  @media (max-width: 991px) {
  	.bg-full-sm {
  		padding-bottom: 100vh;
@@ -608,7 +611,7 @@
  		position: relative;
  	}
  }
- 
+
  @media (max-width: 767px) {
  	.bg-full-xs {
  		padding-bottom: 100vh;
@@ -805,9 +808,9 @@
  		height: 100vh;
  		position: relative;
  	}
- 	div.left,
- 	div.center,
- 	div.right,
+ 	div.left-pos,
+ 	div.center-pos,
+ 	div.right-pos,
  	.boxed-copy-left,
  	.boxed-copy-center,
  	.boxed-copy-right {
@@ -819,7 +822,7 @@
  		text-align: center;
  	}
  }
- 
+
  @media (max-width: 580px) {
  	.boxed-bg {
  		min-width: 0px !important;
