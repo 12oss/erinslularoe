@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Erin's LuLaRoe
-email: ross9387@gmail.com
+title: 
+email: lularoeerinharried@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This would be the lovely fallback description for my site. Can you dig it?
 #twitter_username: 12ossome
@@ -24,22 +24,63 @@ description: > # this means to ignore newlines until "baseurl:"
 markdown:         kramdown
 theme:            minima
 
+#Breadcrumbs
+#breadcrumbs: true  # disabled by default
+breadcrumbs:
+  root:
+    hide: false  # show breadcrumbs on root/home page
+    image: false # Show image or title text
+
+    
+permalink: /:title/
+
+collections:
+  amelia:
+    output: true
 
 # Permalinks
 permalink:        pretty
 
 # Server
-source:           docs
-destination:      _gh_pages
-host:             0.0.0.0
-port:             12055
-baseurl:          "/erinslularoe"
+source:           _gh_pages
+destination:      docs
+#host:             0.0.0.0
+port:             1232
+baseurl:          ""
 #Production : https://12oss.github.io/erinslularoe/
 #DEV : http://0.0.0.0:12055/erinslularoe/
-url:              "https://12oss.github.io/erinslularoe/"
+url:              "http://erinslularoe.com"
 encoding:         UTF-8
+
+# Disqus post comments
+disqus_shortname: erinslularoe
+
+#Language
+locale: "en-US"
+# Permalinks
+# HELPFUL
+#https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+
+#permalink: /:title/index.html
+
+      
+#Compress HTML
+compress_html:
+    clippings: []
+    comments: []
+    endings: []
+    ignore:
+    envs: []
+    blanklines: false
+    profile: false
+    startings: []
+
 
 # Gems
 gems:
   - jekyll-seo-tag
-  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-sitemap
+ # - github-pages
+ # - jekyll-github-metadata
+
