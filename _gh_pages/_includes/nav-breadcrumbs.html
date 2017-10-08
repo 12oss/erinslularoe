@@ -1,0 +1,56 @@
+<style type="text/css">
+	.nav-breadcrumbs a {
+		font-weight: 300;
+		color: #666666 !important;
+	}
+
+	.nav-breadcrumbs a:hover {
+		text-decoration: underline !important;
+	}
+
+	.nav-breadcrumbs {
+		text-transform: capitalize;
+		color: #666666 !important;
+		font-weight: 800;
+		float: right;
+	}
+
+	span.prompt {
+		padding: 5px;
+	}
+
+	.nav-breadcrumbs ol {
+		margin-left: -40px;
+	}
+
+	.nav-breadcrumbs ol,
+	.nav-breadcrumbs ol li {
+		list-style: none;
+		display: inline;
+	}
+
+	@media screen and (max-width: 767px) and (min-width: 1px) {
+		.nav-breadcrumbs {
+			float: left !important;
+		}
+	}
+</style>
+{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+<div class="nav-breadcrumbs">
+	<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			<a itemprop="item" href="/">
+				<span itemprop="name">Home</span>
+			</a>
+			<!--<meta itemprop="position" content="{% increment %}" />-->
+		</li>
+		{% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }} {% else %} /
+		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			<a itemprop="item" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
+				<span itemprop="name">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</span>
+			</a>
+			<!--<meta itemprop="position" content="{% increment %}" />-->
+		</li>
+		{% endif %} {% endfor %}
+	</ol>
+</div>

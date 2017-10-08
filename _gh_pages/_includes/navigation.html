@@ -1,0 +1,423 @@
+<style type="text/css">
+	/* The side navigation menu */
+
+	img.brand-img {
+		width: 40%;
+	}
+
+	#mySidenav div.top-lvl-link a {
+		color: #999999;
+	}
+
+	#mySidenav div.top-lvl-link li a {
+		color: #333333 !important;
+	}
+
+	.dropdown-menu {
+		width: 100%;
+		margin: 0px !important;
+		padding: 3px 0px 0px 0px;
+	}
+
+	.dropdown-menu li {
+		border-bottom: 1px solid #cccccc;
+	}
+
+	a.secondary-links {
+		text-transform: initial;
+		padding-right: 20px;
+	}
+
+	a.toggle {
+		min-width: 100%;
+		display: block;
+	}
+
+	a.toggle span {
+		position: relative;
+		float: right;
+		top: 10px;
+		right: 15px;
+	}
+
+	.sidenav {
+		height: 100%;
+		/* 100% Full-height */
+		width: 0;
+		/* 0 width - change this with JavaScript */
+		position: fixed;
+		/* Stay in place */
+		z-index: 999;
+		/* Stay on top */
+		top: 0;
+		left: 0;
+		background-color: #222222;
+		/* Black*/
+		overflow-x: hidden;
+		/* Disable horizontal scroll */
+		padding-top: 45px;
+		/* Place content 60px from the top */
+		transition: 0.5s;
+		/* 0.5 second transition effect to slide in the sidenav */
+	}
+	/* The navigation menu links */
+
+	.sidenav div.top-lvl-link {
+		padding: 7px 7px 7px 25px;
+		text-decoration: none;
+		font-size: 16px;
+		color: #999999 !important;
+		display: block;
+		transition: 0.3s;
+		border-bottom: 2px solid rgba(125, 125, 125, .2);
+		font-weight: 300;
+		cursor: pointer !important;
+		text-transform: uppercase;
+	}
+
+	.sidenav div.top-lvl-link:first-child {
+		border-bottom: none !important;
+	}
+	/* When you mouse over the navigation links, change their color */
+
+	.sidenav div.top-lvl-link:hover,
+	.offcanvas div.top-lvl-link:focus {
+		color: #cccccc;
+		background-color: #111111;
+		cursor: pointer !important;
+	}
+	/* Position and style the close button (top right corner) */
+
+	.sidenav a.closebtn {
+		position: absolute;
+		top: 0;
+		right: 0px;
+		font-size: 30px;
+		width: 45px;
+		float: right;
+		text-align: center;
+		color: #999999;
+	}
+
+	div.top-lvl-link.lineheight-2 {
+		line-height: 25px;
+	}
+
+	#mySidenav {
+		max-width: 250px;
+	}
+
+	.ham-menu {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+		/*padding: 7px 15px 15px 15px;*/
+		cursor: pointer;
+	}
+	/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+	@media screen and (max-height: 450px) {
+		.sidenav {
+			padding-top: 15px;
+		}
+		.sidenav div.top-lvl-link {
+			font-size: 18px;
+		}
+		div.top-lvl-link.lineheight-2 {
+			line-height: 18px;
+		}
+	}
+	/* ANIMATED MENU BUTTON THINGY*/
+
+	.nav-container {
+		display: inline-block;
+		cursor: pointer;
+		position: absolute;
+		top: 2%;
+		left: auto;
+		right: 2%;
+		width: 35px;
+	}
+
+	.bar1,
+	.bar2,
+	.bar3 {
+		width: 35px;
+		height: 4px;
+		background-color: #333;
+		margin: 6px 0;
+		transition: 0.4s;
+		border-radius: 25px;
+	}
+	/* end ANIMATED MENU THINGY*/
+
+	.ham-wrapper {
+		position: fixed;
+		z-index: 999;
+		padding-left: 14px;
+		padding-top: 4px;
+		width: auto;
+		background-color: #f0f0f0;
+		padding-bottom: 4px;
+		padding-right: 14px;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+
+	@media screen and (max-width: 767px) and (min-width: 1px) {
+		#mySidenav {
+			max-width: 100% !important;
+		}
+		img.brand-img {
+			width: 20% !important;
+		}
+		.sidenav {
+			padding-top: 0px !important;
+		}
+		.ham-wrapper {
+			padding-top: 4px !important;
+			bottom: 0px;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			color: #f0f0f0;
+			background-color: #444444;
+		}
+		.bar1,
+		.bar2,
+		.bar3 {
+			width: 35px;
+			height: 3px;
+			background-color: #f0f0f0;
+			margin: 4px 0;
+			transition: 0.4s;
+			border-radius: 25px;
+		}
+		.bar1 {
+			margin-top: 0px
+		}
+		.sidenav a.closebtn {
+			bottom: 0px;
+			left: 0px;
+			top: auto;
+		}
+	}
+</style>
+<!-- H A M B U R G E R   M E N U  -->
+<div style="position: relative;">
+	<ul class="nav navbar-nav ham-menu" title="Hamburger Menu" onclick="openNav()">
+		<div class="ham-wrapper">
+			<div><small>MENU</small></div>
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+	</ul>
+</div>
+<!-- H A M B U R G E R   M E N U  -->
+<!-- S T A R T   S I D E N A V  -->
+<nav id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<!-- LOGO GOES HERE-->
+	<div class="top-lvl-link">
+		<a href="{{ site.baseurl }}/">
+			<img class="brand-img" src="{{ site.baseurl }}/assets/css/images/llr-logo.png" width="100%" alt="Erin's LuLaRoe Homepage" title="Erin's LuLaRoe" />
+		</a>
+	</div>
+	<!-- LOGO GOES HERE -->
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Leggings</strong>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/one-size/">One Size</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/tall-curvy/">Tall/Curvy</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/tc2/">TC2</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/kids-sm/">Kids' S/M</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/kids-lg/">Kids' L/XL</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/tween/">Tween</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Tops</strong>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/classic/">Classic T</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/gigi/">Gigi</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/irma/">Irma</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/joy/">Joy</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/lindsay/">Lindsay</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/lynnae/">lynnae</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/mimi/">Mimi</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/monroe/">Monroe</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/perfect/">Perfect</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/randy/">Randy</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/sarah/">Sarah</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/tops/shirley/">Shirley</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Dresses</strong>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="{{ site.baseurl }}/styles/dresses/amelia/">Amelia</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/dresses/carly/">Carly</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/dresses/julia/">Julia</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/dresses/nicole/">Nicole</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Skirts</strong>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="{{ site.baseurl }}/styles/skirts/azure/">Azure</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/skirts/cassie/">Cassie</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/skirts/maxi/">Maxi</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/skirts/madison/">Madison</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Denim</strong>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="{{ site.baseurl }}/styles/denim/harvey/">Harvey</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/denim/jaxon/">Jaxon</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Kids'</strong>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="{{ site.baseurl }}/styles/kids/bianka/">Bianka</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/kids/gracie/">Gracie</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/kids/mae/">Mae</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/kids-sm/">Kids' Leggings S/M</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/kids-lg/">Kids' Leggings L/XL</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/styles/leggings/tween/">Tween Leggings</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Collections</strong>
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="{{ site.baseurl }}/collections/disney/">Disney</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/collections/halloween/">Halloween</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/collections/christmas/">Christmas</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/collections/elegant/">Elegant</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/collections/valentines/">Valentine's Day</a>
+			</li>
+			<li>
+				<a href="{{ site.baseurl }}/collections/americana/">Americana</a>
+			</li>
+		</ul>
+	</div>
+	<div class="top-lvl-link txt-right">
+		<a class="secondary-links" href="{{ site.baseurl }}/about">
+			About Me
+		</a>
+	</div>
+	<div class="top-lvl-link txt-right">
+		<a class="secondary-links" href="{{ site.baseurl }}/care-instructions">
+			Care Instructions
+		</a>
+	</div>
+	<div class="top-lvl-link txt-right">
+		<a class="secondary-links" href="{{ site.baseurl }}/contact">
+			Contact Us
+		</a>
+	</div>
+</nav>
+<!-- end S I D E N A V  -->
+<script type="text/javascript">
+	/* Set the width of the side navigation to 250px */
+	function openNav() {
+		document.getElementById("mySidenav").style.width = "100%";
+	}
+	/* Set the width of the side navigation to 0 */
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0";
+	}
+</script>
