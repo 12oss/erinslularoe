@@ -1,7 +1,6 @@
 /*async breaks my smooth scroll to....*/
 /*function f1 is defined around everything so that I can async all js and then run all this code after page loads in*/
 function f1() {
-
 	/*$(function() {
 		$(".dropdown").hover(
 			function() {
@@ -16,26 +15,20 @@ function f1() {
 			});
 	});*/
 	/*end nav dropdown*/
-
 	/*tool tip*/
 	$("[data-toggle=tooltip]").tooltip();
 	/*end tooltip*/
-
 	/*tabs*/
 	$('.nav-tabs a').click(function(e) {
-			e.preventDefault()
-			$(this).tab('show')
-		})
-		/*end tabs*/
-
-
+		e.preventDefault()
+		$(this).tab('show')
+	})
+	/*end tabs*/
 	/*lazysizes*/
 	$(document).on('lazybeforesizes', function(e) {
 		/*use width of parent node instead of the image width itself*/
 		/*e.detail.width = $(e.target).closest(':not(picture)').innerWidth() || e.detail.width;*/
-
 	});
-
 	window.lazySizesConfig = window.lazySizesConfig || {};
 	window.lazySizesConfig.loadMode = 2;
 	window.lazySizesConfig.preloadAfterLoad = true;
@@ -45,13 +38,10 @@ function f1() {
 		'md': '(max-width: 991px)',
 		'lg': '(max-width: 1200px)'
 	};
-
 	/*ISOTOPE with Lazysizes*/
 	$(document).ready(function() {
 		$('#grid-container').each(function() {
-
 			var $isotope = $('.isotope-box');
-
 			$isotope.isotope({
 				layoutMode: 'masonry',
 				/* set itemSelector so .grid-sizer is not used in layout*/
@@ -61,17 +51,14 @@ function f1() {
 					columnWidth: '.grid-sizer'
 				},
 				percentPosition: true
-					/* slow transition*/
-					/*transitionDuration: '.4s'*/
+				/* slow transition*/
+				/*transitionDuration: '.4s'*/
 			});
-
 			$isotope[0].addEventListener('load', (function() {
 				var runs;
 				var update = function() {
-
 					$isotope.isotope('layout');
 					runs = false;
-
 				};
 				return function() {
 					if (!runs) {
@@ -84,60 +71,44 @@ function f1() {
 		});
 	});
 	/*end lazysizes*/
-
 	/*DYNAMICALLY load youtube videos*/
 	/*Find all the YouTube video embedded on a page*/
 	var videos = document.getElementsByClassName("youtube");
-
 	for (var i = 0; i < videos.length; i++) {
-
 		var youtube = videos[i];
-
 		/*Based on the YouTube ID, we can easily find the thumbnail image*/
 		var img = document.createElement("img");
 		/*img.setAttribute("src", "http://i.ytimg.com/vi/" + youtube.id + "/hqdefault.jpg");*/
 		img.setAttribute("class", "thumb");
 		img.setAttribute("width", "100%");
-
-
 		/*Overlay the Play icon to make it look like a video player*/
 		var circle = document.createElement("div");
 		circle.setAttribute("class", "circle");
 		youtube.appendChild(img);
 		youtube.appendChild(circle);
-
 		/*Attach an onclick event to the YouTube Thumbnail*/
 		youtube.onclick = function() {
-
 			/*Create an iFrame with autoplay set to true*/
 			var iframe = document.createElement("iframe");
 			iframe.setAttribute("src",
 				"https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1&border=0&wmode=opaque&enablejsapi=1&rel=0");
-
-
 			/*Replace the YouTube thumbnail with YouTube HTML5 Player*/
 			this.parentNode.replaceChild(iframe, this);
-
 		};
 	}
-
-
 	/*fancybox*/
 	$(document).ready(function() {
 		$(".fancybox").fancybox({
 			/*Use Alt atribute*/
 			beforeShow: function() {
 				var alt = this.element.find('img').attr('alt');
-
 				this.inner.find('img').attr('alt', alt);
-
 				this.title = alt;
 				/* Disable right click */
 				$.fancybox.wrap.bind("contextmenu", function(e) {
 					return false;
 				});
 			},
-
 			/*For all options go to http://fancyapps.com/fancybox/*/
 			padding: 4,
 			fitToView: true,
@@ -155,7 +126,6 @@ function f1() {
 					},
 					locked: false
 				}
-
 			},
 			mouseWheel: false,
 			nextEffect: 'fade',
@@ -163,12 +133,10 @@ function f1() {
 		});
 	});
 	/*end fancybox*/
-
 	/*HASH*/
 	jQuery(function() {
 		jQuery('a[href*=#]:not([href=#])').click(function() {
 			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-
 				var target = jQuery(this.hash);
 				target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
 				if (target.length) {
@@ -197,7 +165,6 @@ function f1() {
 		}, 800);
 		return false;
 	});
-
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 150) {
 			$('#back-to-top').stop().fadeIn(250);
@@ -206,7 +173,6 @@ function f1() {
 		}
 	});
 	/*end BACK TO TOP*/
-
 	/*ASYNC CSS FILES*/
 	/*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
 	(function(w) {
@@ -227,13 +193,11 @@ function f1() {
 				var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
 				ref = refs[refs.length - 1];
 			}
-
 			var sheets = doc.styleSheets;
 			ss.rel = "stylesheet";
 			ss.href = href;
 			/*temporarily set media to something inapplicable to ensure it'll fetch without blocking render*/
 			ss.media = "only x";
-
 			/*wait until body is defined before injecting link. This ensures a non-blocking load in IE11.*/
 			function ready(cb) {
 				if (doc.body) {
@@ -269,7 +233,6 @@ function f1() {
 				}
 				ss.media = media || "all";
 			}
-
 			/*once loaded, set link's media back to `all` so that the stylesheet applies once it loads*/
 			if (ss.addEventListener) {
 				ss.addEventListener("load", loadCB);
@@ -285,7 +248,6 @@ function f1() {
 			w.loadCSS = loadCSS;
 		}
 	}(typeof global !== "undefined" ? global : this));
-
 	/*css preload*/
 	/*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  */
 	(function(w) {
@@ -301,7 +263,6 @@ function f1() {
 				return false;
 			}
 		};
-
 		/*loop preload links and fetch using loadCSS*/
 		rp.poly = function() {
 			var links = w.document.getElementsByTagName("link");
@@ -313,7 +274,6 @@ function f1() {
 				}
 			}
 		};
-
 		/*if link[rel=preload] is not supported, we must fetch the CSS manually using loadCSS*/
 		if (!rp.support()) {
 			rp.poly();
@@ -361,7 +321,6 @@ function f1() {
 		s.parentNode.insertBefore(tk, s)
 	})(document);
 	/*end TYPEKIT*/
-
 	/*CLIPBOARD*/
 	var clipboard = new Clipboard('.copyclip');
 	clipboard.on('success', function(e) {
@@ -370,17 +329,22 @@ function f1() {
 		console.info('Text:', e.text);
 		console.info('Trigger:', e.trigger);
 		/*$(e.trigger).attr('title', 'Copied').tooltip('fixTitle').tooltip('show');*/
-
 	});
-
 	clipboard.on('error', function(e) {
 		console.error('Action:', e.action);
 		console.error('Trigger:', e.trigger);
 	});;
 	/*end CLIPBAORD*/
-
-
+	/* LAZYLOAD*/
+	/**/
+	$(function() {
+		$("img.lazyload").show().lazyload({
+			effect: "fadeIn",
+			failure_limit : 20,
+			threshold : 350
+		});
+	});
+	/*end LAZY*/
 }
-
 /*runs everything after page loads*/
 window.onload = f1;

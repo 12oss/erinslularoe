@@ -9503,6 +9503,7 @@ section {
 
 
 
+
 /*scroll to top*/
 
 div.back-to-top-parent {
@@ -9558,18 +9559,19 @@ div#back-to-top {
 @media (max-width: 767px) {
 
 	div#back-to-top {
-		right: 2px;
-		bottom: 55px;
+		right: -10px !important;
+		bottom: 45px !important;
 		margin: 0px;
 		padding: 8px;
 	}
 	div#back-to-top:hover {
 		width: 54px;
 		height: 54px;
-		right: -2px;
-		bottom: 33px;
+		right: -10px;
+		bottom: 45px;
 	}
 }
+
 
 
 
@@ -9590,24 +9592,6 @@ div.youtube:hover div.circle {
 
 
 
-/*lazyload lazysizes*/
-
-
-/* fade image in after load */
-
-.lazyload,
-.lazyloading {
-	opacity: 0;
-}
-
-.lazyloaded {
-	opacity: 1;
-	transition: opacity 1500ms;
-}
-
-
-
-/*end lazysizes*/
 
 
 /*fix for iphone fonts*/
@@ -9617,6 +9601,7 @@ div.youtube:hover div.circle {
 		-webkit-text-size-adjust: none;
 	}
 }
+
 
 
 
@@ -9635,6 +9620,7 @@ a#myHeader1 {
 
 
 
+
 /* end the toggle hide/show css for pre code tags*/
 
 
@@ -9644,6 +9630,7 @@ a#myHeader1 {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 
 
 
@@ -9666,15 +9653,15 @@ a i {
 
 
 
+
 /*end icons*/
 
 
-/*LAZYLOAD IMAGES*/
+/*LAZYLOAD*/
 
-.lazy {
+.lazyload {
 	display: none;
 }
-
 
 
 /*end LAZYLOAD*/
@@ -9763,6 +9750,7 @@ footer.footer>div.row {
 
 
 
+
 /*end footer content*/
 
 
@@ -9806,6 +9794,7 @@ a.scroll-to-top {
 
 
 
+
 /*end scroll to top*/
 
 section.row {
@@ -9844,6 +9833,7 @@ hr {
 
 
 
+
 /*FLEX */
 
 .row-eq-height {
@@ -9867,6 +9857,7 @@ hr {
 
 
 
+
 /*end FLEX*/
 
 
@@ -9884,6 +9875,7 @@ hr {
 
 
 
+
 /*global VERTICAL ALIGN (the full width banner class is in separate stylesheet) ***needs a height set to work properly*/
 
 .vertical-align {
@@ -9894,6 +9886,7 @@ hr {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
 
 
 
@@ -9929,32 +9922,11 @@ hr {
 
 
 
+
 /*end GLOBALS*/
 
 
 /*BUTTONS*/
-
-
-/*
-.btn {
-	font-family: "museo-sans", sans-serif;
-	font-weight: 700;
-	margin-top: 15px;
-	margin-left: 5px;
-	margin-right: 5px;
-	font-size: 1.3rem;
-	padding: 8px 18px;
-	text-transform: uppercase;
-	letter-spacing: 0px;
-	transition: background-color 0.15s ease 0s, border-color 0.15s ease 0s, color 0.15s ease 0s;
-	border-radius: 0px;
-	box-shadow: 0px 0px 5px rgba(255, 255, 255, .3);
-	display: inline-block;
-	width: auto;
-	height: auto;
-	margin-bottom: 10px;
-	cursor: pointer;
-}*/
 
 .btn-transparent {
 	background-color: transparent;
@@ -10132,6 +10104,7 @@ hr {
 
 
 
+
 /*end BUTTONS*/
 
 
@@ -10140,6 +10113,7 @@ hr {
 .text-light {
 	color: rgba(255, 255, 250, 1)
 }
+
 
 
 
@@ -10358,6 +10332,7 @@ h2.porto.title a:focus {
 	text-shadow: 0px 0px 30px white, 0px 0px 20px white, 0px 0px 20px white, 0px 0px 10px white, 0px 0px 10px white, 0px 0px 5px white;
 	width: 98%;
 }
+
 
 
 
