@@ -16,7 +16,7 @@
 title: 
 email: lularoeerinharried@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This would be the lovely fallback description for my site. Can you dig it?
+ 
 #twitter_username: 12ossome
 #github_username:  12oss
 
@@ -33,10 +33,6 @@ breadcrumbs:
 
     
 permalink: /:title/
-
-collections:
-  amelia:
-    output: true
 
 # Permalinks
 permalink:        pretty
@@ -62,6 +58,13 @@ locale: "en-US"
 #https://mmistakes.github.io/minimal-mistakes/docs/configuration/
 
 #permalink: /:title/index.html
+
+#Teaser Image
+image: /assets/css/images/llr-logo.png
+
+
+#Logo
+logo: /assets/css/images/llr-logo.png
 
       
 #Compress HTML

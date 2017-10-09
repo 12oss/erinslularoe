@@ -85,6 +85,21 @@ comments: true
 				<div class="clearfix" style="padding: 25px;"></div>
 			</div>
 		</main>
+		<script type='application/ld+json'>
+			{
+				"@context": "http://www.schema.org",
+				"@type": "product",
+				"brand": "LuLaRoe",
+				"name": "{{ page.style }}",
+				"image": "{{ site.url }}/inventory-images/{{ page.style }}/{{ page.sku }}.jpg",
+				"description": "{{ page.excerpt }}",
+				"offers": {
+					"@type": "Offer",
+					"priceCurrency": "USD",
+					"price": "{{ page.price }}"
+				}
+			}
+		</script>
 		{% include back-to-top.html %}
 		<footer class="footer">
 			{% include footer.html %}

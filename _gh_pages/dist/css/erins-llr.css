@@ -1400,7 +1400,7 @@ html {
 }
 
 body {
-	font-family: "proxima-nova", sans-serif;
+	font-family: "museo-sans", sans-serif;
 	font-size: 1.4rem;
 	line-height: 1.42857143;
 	color: #333;
@@ -8933,7 +8933,7 @@ Main components
 	right: 0;
 	color: #ffffff;
 	padding: 1em;
-	font-family: "proxima-nova-sc-osf-condensed", sans-serif;
+	font-family: "museo-sans", sans-serif;
 	font-weight: 600;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -9497,9 +9497,21 @@ a.light-inverse:hover,
 }*/
 /* CSS Document */
 
+html,
+body,
+p,
+ul,
+li,
+small,
+strong {
+	-webkit-font-smoothing: antialiased !important;
+}
+
 section {
 	position: relative;
 }
+
+
 
 
 
@@ -9561,21 +9573,18 @@ div#back-to-top {
 @media (max-width: 767px) {
 
 	div#back-to-top {
-		right: -10px !important;
-		bottom: 45px !important;
-		margin: 0px;
+		right: 1px!important;
+		bottom: 55px!important;
+		margin: 0;
 		padding: 8px;
 	}
 	div#back-to-top:hover {
 		width: 54px;
 		height: 54px;
-		right: -10px;
-		bottom: 45px;
+		right: 1px;
+		bottom: 55px;
 	}
 }
-
-
-
 
 
 
@@ -9600,6 +9609,8 @@ div.youtube:hover div.circle {
 
 
 
+
+
 /*fix for iphone fonts*/
 
 @media screen and (max-device-width: 480px) {
@@ -9607,6 +9618,8 @@ div.youtube:hover div.circle {
 		-webkit-text-size-adjust: none;
 	}
 }
+
+
 
 
 
@@ -9631,6 +9644,8 @@ a#myHeader1 {
 
 
 
+
+
 /* end the toggle hide/show css for pre code tags*/
 
 
@@ -9640,6 +9655,8 @@ a#myHeader1 {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+
 
 
 
@@ -9668,6 +9685,8 @@ a i {
 
 
 
+
+
 /*end icons*/
 
 
@@ -9676,6 +9695,8 @@ a i {
 .lazyload {
 	display: none;
 }
+
+
 
 
 
@@ -9769,6 +9790,8 @@ footer.footer>div.row {
 
 
 
+
+
 /*end footer content*/
 
 
@@ -9809,6 +9832,8 @@ a.scroll-to-top {
 	-webkit-box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, .5);
 	box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, .5);
 }
+
+
 
 
 
@@ -9856,6 +9881,8 @@ hr {
 
 
 
+
+
 /*FLEX */
 
 .row-eq-height {
@@ -9882,6 +9909,8 @@ hr {
 
 
 
+
+
 /*end FLEX*/
 
 .btn,
@@ -9891,6 +9920,8 @@ hr {
 	font-family: "museo-sans", sans-serif;
 	font-weight: 700
 }
+
+
 
 
 
@@ -9911,6 +9942,8 @@ hr {
 
 
 
+
+
 /*global VERTICAL ALIGN (the full width banner class is in separate stylesheet) ***needs a height set to work properly*/
 
 .vertical-align {
@@ -9921,6 +9954,8 @@ hr {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
+
 
 
 
@@ -9956,6 +9991,8 @@ hr {
 	display: inline-block;
 	padding: 15px;
 }
+
+
 
 
 
@@ -10150,6 +10187,8 @@ hr {
 
 
 
+
+
 /*end BUTTONS*/
 
 
@@ -10158,6 +10197,8 @@ hr {
 .text-light {
 	color: rgba(255, 255, 250, 1)
 }
+
+
 
 
 
@@ -10379,6 +10420,8 @@ h2.porto.title a:focus {
 	text-shadow: 0px 0px 30px white, 0px 0px 20px white, 0px 0px 20px white, 0px 0px 10px white, 0px 0px 10px white, 0px 0px 5px white;
 	width: 98%;
 }
+
+
 
 
 
