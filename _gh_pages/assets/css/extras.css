@@ -7,6 +7,8 @@ section {
 
 
 
+
+
 /*scroll to top*/
 
 div.back-to-top-parent {
@@ -78,6 +80,8 @@ div#back-to-top {
 
 
 
+
+
 /**end scroll to top/
 /*vid player*/
 
@@ -97,6 +101,8 @@ div.youtube:hover div.circle {
 
 
 
+
+
 /*fix for iphone fonts*/
 
 @media screen and (max-device-width: 480px) {
@@ -104,6 +110,8 @@ div.youtube:hover div.circle {
 		-webkit-text-size-adjust: none;
 	}
 }
+
+
 
 
 
@@ -124,6 +132,8 @@ a#myHeader1 {
 
 
 
+
+
 /* end the toggle hide/show css for pre code tags*/
 
 
@@ -133,6 +143,8 @@ a#myHeader1 {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+
 
 
 
@@ -157,6 +169,8 @@ a i {
 
 
 
+
+
 /*end icons*/
 
 
@@ -165,6 +179,8 @@ a i {
 .lazyload {
 	display: none;
 }
+
+
 
 
 /*end LAZYLOAD*/
@@ -254,6 +270,8 @@ footer.footer>div.row {
 
 
 
+
+
 /*end footer content*/
 
 
@@ -298,6 +316,8 @@ a.scroll-to-top {
 
 
 
+
+
 /*end scroll to top*/
 
 section.row {
@@ -337,6 +357,8 @@ hr {
 
 
 
+
+
 /*FLEX */
 
 .row-eq-height {
@@ -361,7 +383,18 @@ hr {
 
 
 
+
+
 /*end FLEX*/
+
+.btn,
+.img-caption-center,
+.img-caption-left,
+.img-caption-right {
+	font-family: "museo-sans", sans-serif;
+	font-weight: 700
+}
+
 
 
 /*section [class^="col-"]{padding-left:0px; padding-right:0px;}*/
@@ -379,6 +412,8 @@ hr {
 
 
 
+
+
 /*global VERTICAL ALIGN (the full width banner class is in separate stylesheet) ***needs a height set to work properly*/
 
 .vertical-align {
@@ -389,6 +424,8 @@ hr {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
+
 
 
 
@@ -426,10 +463,16 @@ hr {
 
 
 
+
+
 /*end GLOBALS*/
 
 
 /*BUTTONS*/
+
+.btn {
+	text-transform: uppercase;
+}
 
 .btn-transparent {
 	background-color: transparent;
@@ -608,6 +651,8 @@ hr {
 
 
 
+
+
 /*end BUTTONS*/
 
 
@@ -616,6 +661,8 @@ hr {
 .text-light {
 	color: rgba(255, 255, 250, 1)
 }
+
+
 
 
 
@@ -839,6 +886,8 @@ h2.porto.title a:focus {
 
 
 
+
+
 /**********************************/
 
 
@@ -906,6 +955,7 @@ h2.porto.title a:focus {
 		-ms-transform: translateY(0%);
 		transform: translateY(0%);
 	}
+
 	/*.max-1080, .max-850, .max-550{padding-left:20px; padding-right:20px;}*/
 }
 
