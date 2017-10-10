@@ -9,10 +9,8 @@ module.exports = function(grunt) {
 					'_gh_pages/assets/css/bootstrap.min.css',
 					'_gh_pages/assets/css/full-width.css',
 					'_gh_pages/assets/css/prism.css',
-					'_gh_pages/assets/css/before-after.css',
 					'_gh_pages/assets/css/fonts.css',
 					'_gh_pages/assets/css/extras.css',
-					'_gh_pages/assets/css/masonry.css',
 					'_gh_pages/assets/css/jquery.fancybox.css'
 				],
 
@@ -24,15 +22,12 @@ module.exports = function(grunt) {
 				},
 				src: ['_gh_pages/assets/js/jquery.min.js',
 					'_gh_pages/assets/js/bootstrap.min.js',
-					'_gh_pages/assets/js/before-after.js',
 					'_gh_pages/assets/js/modernizr.js',
 					'_gh_pages/assets/js/jquery.fancybox.pack.js',
-					'_gh_pages/assets/js/isotope.pkgd.js',
 					'_gh_pages/assets/js/jquery.mobile.custom.min.js',
 					'_gh_pages/assets/js/ls.respimg.min.js',
 					'_gh_pages/assets/js/jquery.lazyload.js',
 					'_gh_pages/assets/js/jquery.smooth-scroll.min.js',
-					'_gh_pages/assets/js/clipboard.min.js',
 					'_gh_pages/assets/js/site.js'
 				],
 

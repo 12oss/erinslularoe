@@ -23,10 +23,12 @@ comments: true
 			p.sku-id {
 				text-transform: uppercase !important;
 				font-weight: 300;
+				font-size: 100%;
 			}
 
 			p.sku-id small span {
 				text-transform: initial !important;
+
 			}
 
 			h1.prod-title {
@@ -36,6 +38,7 @@ comments: true
 			.site-content {
 				padding-top: 40px;
 			}
+
 
 			@media screen and (max-width: 767px) and (min-width: 1px) {
 				.site-content {
@@ -76,7 +79,39 @@ comments: true
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<h1 class="prod-title">LuLaRoe {{ page.title }}</h1>
 						<p class="sku-id"><small><span>Item ID:</span> {{ page.sku }}</small></p>
-						<hr style="border:1 !important; margin-right: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 55px;"> {% if site.disqus_shortname %} {% include disqus_comments.html %} {% endif %}
+						<hr style="border:1 !important; margin-right: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 25px;"> 
+						<!-- START PP DETAILS-->
+						<p class="pp-desc">{{ page.excerpt }}</p>
+						<!-- Button trigger modal -->
+						<div class="clearfix"></div>
+						<div class="btn btn-primary" type="button" style="float: right">
+							<a data-toggle="modal" data-target="#launch-sizechart">Size Chart</a>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="launch-sizechart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">LuLaRoe Sizing</h4>
+									</div>
+									<div class="modal-body">
+										{% include sizechart.html %}
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<!--end PP DETAILS-->
+						<hr style="border:1 !important;margin-right: 0px;margin-left: 0px;margin-top: 30px;margin-bottom: 25px;">
+						<!-- DISQUS COMMENTS-->
+						{% if site.disqus_shortname %} {% include disqus_comments.html %} {% endif %}
+						<!-- end DISQUS COMMENTS-->
 					</div>
 					<div class="clearfix" style="padding: 20px"></div>
 					<div class="clearfix"></div>

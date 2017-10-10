@@ -87,3 +87,6 @@ gems:
  # - github-pages
  # - jekyll-github-metadata
 
+ github: [metadata]
+ 
+
