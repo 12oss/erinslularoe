@@ -8,6 +8,51 @@ comments: true
 	<head>
 		{% seo %} {% include header.html %}
 		<style>
+			.hideload {
+				/* styles to use when web fonts are loading */
+				opacity: 0;
+			}
+
+			.wf-loading {
+				/*A bunch of loaders at https://loading.io/*/
+				/*
+		    here's a background image (at a meer 723bytes)
+		    to indicate something's happening
+		    */
+				background-image: url({{ site.baseurl }}/assets/css/images/loader.svg) !important;
+				background-position: 50%, 50%;
+				background-repeat: no-repeat;
+				/*
+		    just to make sure the <html>
+		    element shares the same dimensions as
+		    the browser window when loading
+		    (and not the potentially elongated page)
+		    */
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.wf-active {
+				/* styles to use when web fonts are active */
+				opacity: 1;
+				top: 0px;
+				position: relative;
+				z-index: 5;
+				transition: opacity 1s ease-in-out;
+				-moz-transition: opacity 1s ease-in-out;
+				-webkit-transition: opacity 1s ease-in-out;
+			}
+			
+			.site-content {
+				padding-top: 40px;
+				padding-bottom: 80px;
+			}
+			
+			@media screen and (max-width: 767px) and (min-width: 1px) {
+				.site-content {
+					padding-top: 0px !important;
+				}
+			}
 			@font-face {
 				font-family: 'FontAwesome';
 				src: url('{{ site.baseurl }}/dist/css/fonts/fontawesome-webfont.eot');
@@ -81,9 +126,34 @@ comments: true
 						<hr style="border:1 !important; margin-right: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 25px;"> 
 						<!-- START PP DETAILS-->
 						<p class="pp-desc">{{ page.excerpt }}</p>
+						<!-- CLAIM BTN-->
+						<div class="clearfix"></div>
+						<a class="btn btn-danger btn-lg" type="button" style="float: right" data-toggle="modal" data-target="#launch-claimform">CLAIM <i class="fa fa-cart-arrow-down" aria-hidden="true" style="margin: -5px;"></i></a>
+						<!-- Modal -->
+						<div class="modal fade" id="launch-claimform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">LuLaRoe {{ page.title }} Claim Form</h4>
+									</div>
+									<div class="modal-body">
+										{% include claim-btn.html %}
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix" style="padding: 25px;"></div>
+						<!-- end CLAIM BTN-->
 						<!-- Button trigger modal -->
 						<div class="clearfix"></div>
-							<a class="btn btn-primary" type="button" style="float: right" data-toggle="modal" data-target="#launch-sizechart">Size Chart</a>
+						<hr style="border:1 !important;margin-right: 0px;margin-left: 0px;margin-top: 0px;margin-bottom: 15px;">
+							<a class="btn btn-primary btn-sm" type="button" style="float: left" data-toggle="modal" data-target="#launch-sizechart">Size Chart</a>
 						<!-- Modal -->
 						<div class="modal fade" id="launch-sizechart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							<div class="modal-dialog">
@@ -105,11 +175,11 @@ comments: true
 						</div>
 						<div class="clearfix"></div>
 						<!--end PP DETAILS-->
-						<hr style="border:1 !important;margin-right: 0px;margin-left: 0px;margin-top: 30px;margin-bottom: 25px;">
+						<!--<hr style="border:1 !important;margin-right: 0px;margin-left: 0px;margin-top: 30px;margin-bottom: 25px;">-->
 						<!-- DISQUS COMMENTS-->
-						{% if site.disqus_shortname %}
+						<!--{% if site.disqus_shortname %}
 							{% include disqus_comments.html %}
-						{% endif %}
+						{% endif %}-->
 						<!-- end DISQUS COMMENTS-->
 					</div>
 					<div class="clearfix" style="padding: 20px"></div>

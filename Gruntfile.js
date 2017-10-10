@@ -36,8 +36,8 @@ module.exports = function(grunt) {
 		},
 		cssmin: {
 			css: {
-				src: 'docs/dist/css/erins-llr.css',
-				dest: 'docs/dist/css/min/erins-llr.min.css'
+				src: '_gh_pages/dist/css/erins-llr.css',
+				dest: '_gh_pages/dist/css/min/erins-llr.min.css'
 			}
 		},
 		uglify: {

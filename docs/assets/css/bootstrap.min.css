@@ -3973,7 +3973,7 @@ fieldset[disabled] .btn-warning:hover {
 
 .btn-danger {
 	color: #fff;
-	background-color: #d9534f;
+	background-color: #F67599;
 	border-color: #d43f3a
 }
 
@@ -4012,12 +4012,12 @@ fieldset[disabled] .btn-danger.focus,
 fieldset[disabled] .btn-danger:active,
 fieldset[disabled] .btn-danger:focus,
 fieldset[disabled] .btn-danger:hover {
-	background-color: #d9534f;
+	background-color: #F67599;
 	border-color: #d43f3a
 }
 
 .btn-danger .badge {
-	color: #d9534f;
+	color: #F67599;
 	background-color: #fff
 }
 

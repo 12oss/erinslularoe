@@ -2,19 +2,17 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html amp lang="en" class="hideload">
+<html lang="en" class="hideload">
 
 	<head>
-		{% seo %}
-		<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-		<!--	<title>{{ page.title }}</title>
-	{% if page.description %}
-	<meta name="description" content="{{ page.description }}">{% endif %} -->
-		{% include header.html %}
+		{% seo %} {% include header.html %}
 		<style>
 			.hideload {
 				/* styles to use when web fonts are loading */
 				opacity: 0;
+				transition: opacity 1s ease-in-out;
+				-moz-transition: opacity 1s ease-in-out;
+				-webkit-transition: opacity 1s ease-in-out;
 			}
 
 			.wf-loading {
@@ -23,7 +21,7 @@ layout: compress
 		    here's a background image (at a meer 723bytes)
 		    to indicate something's happening
 		    */
-				background-image: url({{ site.baseurl }}/assets/css/images/loader.svg);
+				background-image: url({{ site.baseurl }}/assets/css/images/loader.svg) !important;
 				background-position: 50%, 50%;
 				background-repeat: no-repeat;
 				/*
