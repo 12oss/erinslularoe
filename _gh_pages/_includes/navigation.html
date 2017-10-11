@@ -33,6 +33,10 @@
 		display: block;
 	}
 
+	a.toggle small {
+		color: #F67599;
+	}
+
 	a.toggle span {
 		position: relative;
 		float: right;
@@ -225,178 +229,183 @@
 		</a>
 	</div>
 	<!-- LOGO GOES HERE -->
-	<div class="top-lvl-link dropdown" >
-		<a class="toggle" data-toggle="dropdown"><strong>Leggings</strong> ({{ site.categories.leggings | size }})
+	<div class="top-lvl-link dropdown">
+		<a class="toggle" data-toggle="dropdown"><strong>Leggings</strong> <small>({{ site.categories.leggings | size }})</small>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/one-size/">One Size</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/one-size/">One Size <small>({{ site.categories.leggings-os | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/tall-curvy/">Tall/Curvy</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/tall-curvy/">Tall/Curvy <small>({{ site.categories.leggings-tc | size }})</small></a>
 			</li>
 			<!--<li itemprop="name">
 				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/tc2/">TC2</a>
 			</li>-->
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-sm/">Kids' S/M</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-sm/">Kids' S/M <small>({{ site.categories.leggings-kids-sm | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-lg/">Kids' L/XL</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-lg/">Kids' L/XL <small>({{ site.categories.leggings-kids-lg | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/tween/">Tween</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/tween/">Tween <small>({{ site.categories.leggings-tween | size }})</small></a>
 			</li>
 		</ul>
 	</div>
 	<div class="top-lvl-link dropdown">
-		<a class="toggle" data-toggle="dropdown"><strong>Tops</strong> ({{ site.categories.tops | size }})
+		<a class="toggle" data-toggle="dropdown"><strong>Tops</strong> <small>({{ site.categories.tops | size }})</small>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/classic/">Classic T</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/classic/">Classic T <small>({{ site.categories.classic | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/gigi/">Gigi</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/gigi/">Gigi <small>({{ site.categories.gigi | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/irma/">Irma</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/irma/">Irma <small>({{ site.categories.irma | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/joy/">Joy</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/joy/">Joy <small>({{ site.categories.joy | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/lindsay/">Lindsay</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/lindsay/">Lindsay <small>({{ site.categories.lindsay | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/lynnae/">Lynnae</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/lynnae/">Lynnae <small>({{ site.categories.lynnae | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/mimi/">Mimi</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/mimi/">Mimi <small>({{ site.categories.mimi | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/monroe/">Monroe</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/monroe/">Monroe <small>({{ site.categories.monroe | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/perfect/">Perfect T</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/perfect/">Perfect T <small>({{ site.categories.perfect | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/randy/">Randy T</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/randy/">Randy T <small>({{ site.categories.randy | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/sarah/">Sarah</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/sarah/">Sarah <small>({{ site.categories.sarah | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/shirley/">Shirley</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/tops/shirley/">Shirley <small>({{ site.categories.shirley | size }})</small></a>
 			</li>
 		</ul>
 	</div>
 	<div class="top-lvl-link dropdown">
-		<a class="toggle" data-toggle="dropdown"><strong>Dresses</strong> ({{ site.categories.dresses | size }})
+		<a class="toggle" data-toggle="dropdown"><strong>Dresses</strong> <small>({{ site.categories.dresses | size }})</small>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/amelia/">Amelia</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/amelia/">Amelia <small>({{ site.categories.amelia | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/carly/">Carly</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/carly/">Carly <small>({{ site.categories.carly | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/julia/">Julia</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/julia/">Julia <small>({{ site.categories.julia | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/nicole/">Nicole</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/dresses/nicole/">Nicole <small>({{ site.categories.nicole | size }})</small></a>
 			</li>
 		</ul>
 	</div>
 	<div class="top-lvl-link dropdown">
-		<a class="toggle" data-toggle="dropdown"><strong>Skirts</strong> ({{ site.categories.skirts | size }})
+		<a class="toggle" data-toggle="dropdown"><strong>Skirts</strong> <small>({{ site.categories.skirts | size }})</small>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/azure/">Azure</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/azure/">Azure <small>({{ site.categories.azure | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/cassie/">Cassie</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/cassie/">Cassie <small>({{ site.categories.cassie | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/maxi/">Maxi</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/maxi/">Maxi <small>({{ site.categories.maxi | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/madison/">Madison</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/skirts/madison/">Madison <small>({{ site.categories.madison | size }})</small></a>
 			</li>
 		</ul>
 	</div>
 	<div class="top-lvl-link dropdown">
-		<a class="toggle" data-toggle="dropdown"><strong>Denim</strong> 
+		<a class="toggle" data-toggle="dropdown"><strong>Denim</strong> <small>({{ site.categories.denim | size }})</small>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/denim/harvey/">Harvey</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/denim/harvey/">Harvey <small>({{ site.categories.harvey | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/denim/jaxon/">Jaxon</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/denim/jaxon/">Jaxon <small>({{ site.categories.jaxon | size }})</small></a>
 			</li>
 		</ul>
 	</div>
 	<div class="top-lvl-link dropdown">
-		<a class="toggle" data-toggle="dropdown"><strong>Kids'</strong>
+		<a class="toggle" data-toggle="dropdown"><strong>Kids'</strong> <small>({{ site.categories.kids | size }})</small>
 			<span class="caret"></span>
 		</a>
-		<ul class="dropdown-menu" >
+		<ul class="dropdown-menu">
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/kids/bianka/">Bianka</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/kids/bianka/">Bianka <small>({{ site.categories.bianka | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/kids/gracie/">Gracie</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/kids/gracie/">Gracie <small>({{ site.categories.gracie | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/kids/mae/">Mae</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/kids/mae/">Mae <small>({{ site.categories.mae | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-sm/">Kids' Leggings S/M</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-sm/">Kids' Leggings S/M <small>({{ site.categories.leggings-kids-sm | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-lg/">Kids' Leggings L/XL</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/kids-lg/">Kids' Leggings L/XL <small>({{ site.categories.leggings-kids-lg | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/tween/">Tween Leggings</a>
+				<a itemprop="url" href="{{ site.baseurl }}/styles/leggings/tween/">Tween Leggings <small>({{ site.categories.leggings-tween | size }})</small></a>
 			</li>
 		</ul>
 	</div>
 	<div class="top-lvl-link dropdown">
-		<a class="toggle" data-toggle="dropdown"><strong>Collections</strong>
+		<a class="toggle" data-toggle="dropdown"><strong>Collections</strong> <small>({{ site.categories.colections | size }})</small>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/collections/disney/">Disney</a>
-			</li>
-			<li itemprop="name"> 
-				<a itemprop="url" href="{{ site.baseurl }}/collections/halloween/">Halloween</a>
+				<a itemprop="url" href="{{ site.baseurl }}/collections/disney/">Disney <small>({{ site.categories.disney | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/collections/christmas/">Christmas</a>
+				<a itemprop="url" href="{{ site.baseurl }}/collections/halloween/">Halloween <small>({{ site.categories.halloween | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/collections/elegant/">Elegant</a>
+				<a itemprop="url" href="{{ site.baseurl }}/collections/christmas/">Christmas <small>({{ site.categories.christmas | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/collections/valentines/">Valentine's Day</a>
+				<a itemprop="url" href="{{ site.baseurl }}/collections/elegant/">Elegant <small>({{ site.categories.elegant | size }})</small></a>
 			</li>
 			<li itemprop="name">
-				<a itemprop="url" href="{{ site.baseurl }}/collections/americana/">Americana</a>
+				<a itemprop="url" href="{{ site.baseurl }}/collections/valentines/">Valentine's Day <small>({{ site.categories.valentines | size }})</small></a>
+			</li>
+			<li itemprop="name">
+				<a itemprop="url" href="{{ site.baseurl }}/collections/americana/">Americana <small>({{ site.categories.americana | size }})</small></a>
 			</li>
 		</ul>
 	</div>
 	<div class="top-lvl-link txt-right" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
 		<a class="secondary-links" itemprop="url" href="{{ site.baseurl }}/about-me" itemprop="name">
 			About Me
+		</a>
+	</div>
+	<div class="top-lvl-link txt-right" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+		<a class="secondary-links" itemprop="url" href="{{ site.baseurl }}/book-a-party" itemprop="name">
+			Book A Party
 		</a>
 	</div>
 	<div class="top-lvl-link txt-right" itemscope itemtype="http://www.schema.org/SiteNavigationElement">

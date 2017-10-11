@@ -16,6 +16,7 @@ section {
 
 
 
+
 /*scroll to top*/
 
 div.back-to-top-parent {
@@ -86,6 +87,7 @@ div#back-to-top {
 
 
 
+
 /**end scroll to top/
 /*vid player*/
 
@@ -104,6 +106,7 @@ div.youtube:hover div.circle {
 
 
 
+
 /*fix for iphone fonts*/
 
 @media screen and (max-device-width: 480px) {
@@ -111,6 +114,7 @@ div.youtube:hover div.circle {
 		-webkit-text-size-adjust: none;
 	}
 }
+
 
 
 /*end fix for iphone fonts*/
@@ -127,6 +131,7 @@ a#myHeader1 {
 }
 
 
+
 /* end the toggle hide/show css for pre code tags*/
 
 
@@ -136,6 +141,7 @@ a#myHeader1 {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 
 
 /*icons*/
@@ -156,14 +162,19 @@ a i {
 
 
 
+
 /*end icons*/
 
 
 /*LAZYLOAD*/
 
 .lazyload {
-	display: none;
+	transition: .9s all;
+	-webkit-transition: .9s all;
+	-ms-transition: .9s all;
+	-moz-transition: .9s all;
 }
+
 
 
 /*end LAZYLOAD*/
@@ -196,6 +207,7 @@ body {
 	/*padding-top: 51px;*/
 	/*accounts for header*/
 }
+
 
 
 
@@ -238,6 +250,7 @@ a.scroll-to-top {
 }
 
 
+
 /*end scroll to top*/
 
 section.row {
@@ -275,6 +288,7 @@ hr {
 }
 
 
+
 /*FLEX */
 
 .row-eq-height {
@@ -298,6 +312,7 @@ hr {
 
 
 
+
 /*end FLEX*/
 
 .btn,
@@ -307,6 +322,7 @@ hr {
 	font-family: "museo-sans", sans-serif;
 	font-weight: 700
 }
+
 
 /*section [class^="col-"]{padding-left:0px; padding-right:0px;}*/
 
@@ -327,6 +343,7 @@ hr {
 
 
 
+
 /*global VERTICAL ALIGN (the full width banner class is in separate stylesheet) ***needs a height set to work properly*/
 
 .vertical-align {
@@ -337,6 +354,7 @@ hr {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
 
 
 
@@ -374,6 +392,7 @@ hr {
 	display: inline-block;
 	padding: 15px;
 }
+
 
 
 
@@ -562,6 +581,7 @@ hr {
 
 
 
+
 /*end BUTTONS*/
 
 
@@ -576,12 +596,10 @@ hr {
 
 @media (max-width: 1199px) {}
 
-@media (max-width: 991px) {
-	
-}
+@media (max-width: 991px) {}
 
 @media (max-width: 767px) {
-	
+
 	.creative-content {
 		/*  padding-bottom: 300px;*/
 	}
@@ -606,4 +624,3 @@ hr {
 
 	/*.max-1080, .max-850, .max-550{padding-left:20px; padding-right:20px;}*/
 }
-

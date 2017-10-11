@@ -1820,10 +1820,10 @@ function f1() {
 	/* LAZYLOAD*/
 	/**/
 	$(function() {
-		$("img.lazyload").lazyload({
+		$("img.lazyload").show().lazyload({
 			effect: "fadeIn",
-			skip_invisible : false,
-			threshold: 850
+			skip_invisible : true,
+			threshold: 250
 		});
 	});
 	/*end LAZY*/
