@@ -42,9 +42,9 @@ destination:      docs
 #host:             0.0.0.0
 port:             1232
 baseurl:          ""
-#Production : https://12oss.github.io/erinslularoe/
-#DEV : http://0.0.0.0:12055/erinslularoe/
-url:              "http://erinslularoe.com"
+Production : "https://erinslularoe.com"
+DEV : "http://0.0.0.0:1232"
+url:              "https://erinslularoe.com"
 encoding:         UTF-8
 
 # Disqus post comments

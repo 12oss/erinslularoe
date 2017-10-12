@@ -195,7 +195,7 @@ layout: compress
 				"@type": "product",
 				"brand": "LuLaRoe",
 				"name": "{{ page.style }}",
-				"image": "{{ site.url }}/inventory-images/{{ page.style }}/{{ page.sku }}.jpg",
+				"image": "{{ '/inventory-images/[ page.style ]/[ page.sku ].jpg' | absolute_url }}",
 				"description": "{{ page.excerpt }}",
 				"offers": {
 					"@type": "Offer",
