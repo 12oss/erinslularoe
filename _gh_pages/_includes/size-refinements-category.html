@@ -1,0 +1,68 @@
+<style type="text/css">
+	.size-refinements {
+		padding-left: 15px;
+	}
+
+	.size-refinements ul li:hover,
+	.size-refinements ul:hover {
+		border-bottom: none !important;
+	}
+
+	.size-refinements ul li {
+		list-style: none;
+		display: inline;
+	}
+
+	.size-refinements ul li a {
+		margin-bottom: 5px !important;
+	}
+
+	.size-refinements ul {
+		padding-left: 0px !important
+	}
+
+	.size-refinements h5 a.btn {
+		padding-left: 0px !important;
+		color: #333 !important;
+		font-weight: 900 !important;
+		padding-bottom: 0px !important;
+		text-transform: uppercase !important;
+	}
+
+	@media screen and (max-width: 1199px) and (min-width: 768px) {
+		.size-refinements {
+			padding-top: 15px;
+		}
+	}
+</style>
+<div class="size-refinements">
+	<h5>
+		<a href="{{ site.baseurl }}/styles/{{ page.style-category }}" class="btn btn-sm btn-link" type="button">{{ page.size-refine }} Sizing</a>
+	</h5>
+	<ul>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}//xxs" class="btn btn-sm btn-default" type="button">XXS</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}/xs" class="btn btn-sm btn-default" type="button">XS</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}/s" class="btn btn-sm btn-default" type="button">S</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}/m" class="btn btn-sm btn-default" type="button">M</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}/l" class="btn btn-sm btn-default" type="button">L</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}/xl" class="btn btn-sm btn-default" type="button">XL</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}/2xl" class="btn btn-sm btn-default" type="button">2XL</a>
+		</li>
+		<li>
+			<a href="{{ site.baseurl }}/styles/{{ page.style-category }}/3xl" class="btn btn-sm btn-default" type="button">3XL</a>
+		</li>
+	</ul>
+</div>
