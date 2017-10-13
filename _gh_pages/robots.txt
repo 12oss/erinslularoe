@@ -4,4 +4,4 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: http://www.secondcropcreative.com/sitemap.xml
+Sitemap: https://erinslularoe.com/sitemap.xml
