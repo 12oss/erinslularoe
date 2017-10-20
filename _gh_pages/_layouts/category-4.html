@@ -54,18 +54,21 @@ title: Category
 		</div>
 	</div>
 	<div class="clearfix"></div>
-	<!--<h2>{{ page.title }}</h2>-->
-	{% unless page.content == '' %}
-	<p>{{ page.content }}</p>
-	{% endunless %} {% for post in site.categories[page.category] reversed %}
-	<div class="post-preview col-xs-6 col-sm-4 col-md-3">
-		<a href="{{ post.url | prepend: site.baseurl | remove: 'index.html' }}">
-			<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ site.baseurl }}/inventory-images/{{ post.style }}/{{ post.sku }}.jpg" alt="LuLaRoe {{ post.title }}" width="100%">
-			<p class="post-title lato-black">
-				{{ post.title }}
-			</p>
-			<button class="btn btn-primary" type="button">View</button>
-		</a>
-	</div>
-	{% endfor %}
+	{% if site.categories[page.category] == null %}
+	<div class="clearfix" style="padding: 25px"></div>
+	<p class="txt-center max-550" style="padding: 15px;">We currently do not have any <strong>{{ page.title }}</strong> in stock. Be sure to follow us on <a class="txt-link" href="https://www.instagram.com/lularoeerinharried/" target="_blank">Instagram</a> &amp; <a class="txt-link" href="https://www.facebook.com/lularoeerinharried/" target="_blank">Facebook</a> to stay up to date and sign up for our newsletter to be first to know about new releases!</p>
+	<div class="clearfix" style="padding: 25px"></div>
+	{% else %}
+		{% for post in site.categories[page.category] reversed %}
+		<div class="post-preview col-xs-6 col-sm-4 col-md-3">
+			<a href="{{ post.url | prepend: site.baseurl | remove: 'index.html' }}">
+				<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ site.baseurl }}/inventory-images/{{ post.style }}/{{ post.sku }}.jpg" alt="LuLaRoe {{ post.title }}" width="100%">
+				<p class="post-title lato-black">
+					{{ post.title }}
+				</p>
+				<button class="btn btn-primary" type="button">View</button>
+			</a>
+		</div>
+		{% endfor %}
+	{% endif %}
 </div>

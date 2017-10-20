@@ -1,9 +1,147 @@
 ---
-layout: category-4
+layout: default
 title: LuLaRoe Halloween Collection
-category: halloween 
-
-size-refine: Halloween 
-sizing-link: /collections/halloween
+description: Shop all of Erin's LuLaRoe Halloween Collection today!
 
 ---
+
+<style type="text/css">
+	.s-container {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	.s-container a {
+		color: black;
+	}
+
+	.style-inventory {
+		text-align: center;
+	}
+
+	.style-inventory h4 {
+		margin-top: 15px;
+		margin-bottom: -5px;
+	}
+
+	.style-inventory h5 {
+		font-weight: 300 !important;
+	}
+
+	.img.lazyload {
+		transition: .9s all;
+		-webkit-transition: .9s all;
+	}
+
+	.s-container:hover img.lazyload,
+	.s-container:focus img.lazyload,
+	.s-container:active img.lazyload {
+		filter: blur(1.5px) grayscale(1) brightness(.4);
+		-webkit-filter: blur(1.5px) grayscale(1) brightness(.4);
+		transition: .4s all;
+		-webkit-transition: .4s all;
+		transform: scale(1.02);
+		-webkit-transform: scale(1.02);
+	}
+
+	.s-container:hover .style-inventory,
+	.s-container:focus .style-inventory,
+	.s-container:active .style-inventory {
+		color: #F67599;
+		transition: .2s all;
+		-webkit-transition: .2s all;
+		transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+	}
+
+	.s-container:hover .hidden-btn,
+	.s-container:focus .hidden-btn,
+	.s-container:active .hidden-btn {
+		opacity: 1;
+		transition: .4s all;
+		-webkit-transition: .4s all;
+	}
+
+	.hidden-btn {
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		transition: .4s all;
+		-webkit-transition: .4s all;
+	}
+
+
+	@media screen and (max-width: 767px) and (min-width: 1px) {
+		.m-btn-center {
+			left: 50%;
+			position: relative;
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
+		}
+		.style-inventory h4 {
+			margin-top: 5px;
+			margin-bottom: -5px;
+		}
+		.style-inventory h5 {
+			margin: 0px !important;
+		}
+	}
+</style>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="creative-content max-1080">
+			<!-- CLASSIC-->
+			<div class="col-xs-6 col-sm-3">
+				<div class="s-container">
+					<a href="{{ site.baseurl }}/collections/halloween/tops/classic/">
+						<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ site.baseurl }}/styles/images/classic.jpg" alt="Classic" width="100%">
+						<button class="btn btn-sm btn-danger hidden-btn">VIEW ALL</button>
+						<div class="style-inventory">
+							<h4>Halloween Classic T</h4>
+							<h5>{{ site.categories.halloween-classic | size }} Pieces</h5>
+							<button class="m-btn-center visible-xs btn btn-sm btn-danger">SHOP CLASSIC</button>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!-- end CLASSIC-->
+			<!-- KIDS LEGGINGS -->
+			<div class="col-xs-6 col-sm-3">
+				<div class="s-container">
+					<a href="{{ site.baseurl }}/collections/halloween/leggings/kids-sm/">
+						<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ site.baseurl }}/styles/images/kids-leggings.jpg" alt="Kids' Leggings" width="100%">
+						<button class="btn btn-sm btn-danger hidden-btn">VIEW ALL</button>
+						<div class="style-inventory">
+							<h4>Kids' Halloween Leggings</h4>
+							<h5>{{ site.categories.halloween-leggings-kids | size }} Pieces</h5>
+							<button class="m-btn-center visible-xs btn btn-sm btn-danger">KIDS' HALLOWEEN LEGGINGS</button>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!-- end KIDS LEGGINGS-->
+			<!-- ADULT LEGGINGS-->
+			<div class="col-xs-6 col-sm-3">
+				<div class="s-container">
+					<a href="{{ site.baseurl }}/collectons/halloween/leggings/one-size/">
+						<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ site.baseurl }}/styles/images/leggings.jpg" alt="Leggings" width="100%">
+						<button class="btn btn-sm btn-danger hidden-btn">VIEW ALL</button>
+						<div class="style-inventory">
+							<h4>Halloween Leggings</h4>
+							<h5>{{ site.categories.halloween-leggings-adult | size }} Pieces</h5>
+							<button class="m-btn-center visible-xs btn btn-sm btn-danger">HALLOWEEN LEGGINGS</button>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!-- end ADULT LEGGINGS-->
+		</div>
+	</div>
+</div>
