@@ -9370,6 +9370,7 @@ div.back-to-top-parent {
 	position: relative;
 	opacity: .5;
 	transition: all 250ms;
+	z-index: 9999;
 }
 
 div.back-to-top-parent:hover {
@@ -9389,7 +9390,7 @@ div#back-to-top:hover {
 	width: 54px;
 	height: 54px;
 	right: 8px;
-	bottom: 38px;
+	bottom: 54px;
 }
 
 div#back-to-top {

@@ -52,6 +52,8 @@ title: Category
 	<div class="clearfix" style="padding: 25px"></div>
 	<p class="txt-center max-550" style="padding: 15px;">We currently do not have any <strong>{{ page.title }}</strong> in stock. Be sure to follow us on <a class="txt-link" href="https://www.instagram.com/lularoeerinharried/" target="_blank">Instagram</a> &amp; <a class="txt-link" href="https://www.facebook.com/lularoeerinharried/" target="_blank">Facebook</a> to stay up to date and sign up for our newsletter to be first to know about new releases!</p>
 	<div class="clearfix" style="padding: 25px"></div>
+	{% include mailchimp-m.html %}
+	<div class="clearfix" style="padding: 25px"></div>
 	{% else %}
 		{% for post in site.categories[page.category] reversed %}
 		<div class="post-preview col-xs-12 col-sm-6">

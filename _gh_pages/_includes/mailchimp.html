@@ -1,12 +1,12 @@
 <!-- Begin MailChimp Signup Form -->
-<div style="padding: 15px;">
+<div class="hide-for-null" style="padding: 15px;">
 	<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 	<style type="text/css">
 		#mc_embed_signup {
 			clear: left;
 			font: 14px museo-sans, sans-serif;
 			width: 100%;
-			background-color: #f0f0f0;
+			background-color: #f5f5f5;
 			padding: 5px 0px 5px 0px;
 			position: fixed;
 			bottom: 0px;
@@ -15,6 +15,10 @@
 			-moz-transform: translateX(-50%);
 			-ms-transform: translateX(-50%);
 			transform: translateX(-50%);
+			z-index: 999 !important;
+			-moz-box-shadow: 0px -35px 80px #f0f0f0;
+			-webkit-box-shadow: 0px -35px 80px #f0f0f0;
+			box-shadow: 0px -35px 80px #f0f0f0;
 		}
 
 		#mc_embed_signup label {
@@ -23,6 +27,24 @@
 			padding-bottom: 0px;
 			font-weight: bold;
 			padding-right: 10px;
+		}
+
+		@media screen and (max-width: 767px) and (min-width: 1px) {
+			#mc_embed_signup {
+				clear: left;
+				font: 14px museo-sans, sans-serif;
+				width: 100%;
+				background-color: #f0f0f0;
+				padding: 5px 0px 65px 0px;
+				position: relative;
+				bottom: 0px;
+				left: 0%;
+				-webkit-transform: translateX(0%);
+				-moz-transform: translateX(0%);
+				-ms-transform: translateX(0%);
+				transform: translateX(0%);
+				z-index: 9 !important;
+			}
 		}
 		/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
 			   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. *
