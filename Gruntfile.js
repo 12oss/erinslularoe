@@ -28,6 +28,7 @@ module.exports = function(grunt) {
 					'_gh_pages/assets/js/ls.respimg.min.js',
 					'_gh_pages/assets/js/jquery.lazyload.js',
 					'_gh_pages/assets/js/jquery.smooth-scroll.min.js',
+					'_gh_pages/assets/js/jquery.elevateZoom.min.js',
 					'_gh_pages/assets/js/site.js'
 				],
 

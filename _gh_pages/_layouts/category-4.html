@@ -64,7 +64,7 @@ title: Category
 		{% for post in site.categories[page.category] reversed %}
 		<div class="post-preview col-xs-6 col-sm-4 col-md-3">
 			<a href="{{ post.url | prepend: site.baseurl | remove: 'index.html' }}">
-				<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ site.baseurl }}/inventory-images/{{ post.style }}/{{ post.sku }}.jpg" alt="LuLaRoe {{ post.title }}" width="100%">
+				<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ site.baseurl }}{{ post.image }}" alt="LuLaRoe {{ post.title }}" width="100%">
 				<p class="post-title lato-black">
 					{{ post.title }}
 				</p>

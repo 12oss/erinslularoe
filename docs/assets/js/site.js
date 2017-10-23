@@ -142,13 +142,12 @@ function f1() {
 		s.parentNode.insertBefore(tk, s);
 	})(document);
 	/*end TYPEKIT*/
-
 	/* LAZYLOAD*/
 	/**/
 	$(function() {
 		$("img.lazyload").show().lazyload({
 			effect: "fadeIn",
-			skip_invisible : true,
+			skip_invisible: true,
 			threshold: 250
 		});
 	});
@@ -173,13 +172,11 @@ function f1() {
 				var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
 				ref = refs[refs.length - 1];
 			}
-
 			var sheets = doc.styleSheets;
 			ss.rel = "stylesheet";
 			ss.href = href;
 			/*temporarily set media to something inapplicable to ensure it'll fetch without blocking render*/
 			ss.media = "only x";
-
 			/*wait until body is defined before injecting link. This ensures a non-blocking load in IE11.*/
 			function ready(cb) {
 				if (doc.body) {
@@ -215,7 +212,6 @@ function f1() {
 				}
 				ss.media = media || "all";
 			}
-
 			/*once loaded, set link's media back to `all` so that the stylesheet applies once it loads*/
 			if (ss.addEventListener) {
 				ss.addEventListener("load", loadCB);
@@ -231,7 +227,6 @@ function f1() {
 			w.loadCSS = loadCSS;
 		}
 	}(typeof global !== "undefined" ? global : this));
-
 	/*css preload*/
 	/*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  */
 	(function(w) {
@@ -247,7 +242,6 @@ function f1() {
 				return false;
 			}
 		};
-
 		/*loop preload links and fetch using loadCSS*/
 		rp.poly = function() {
 			var links = w.document.getElementsByTagName("link");
@@ -259,7 +253,6 @@ function f1() {
 				}
 			}
 		};
-
 		/*if link[rel=preload] is not supported, we must fetch the CSS manually using loadCSS*/
 		if (!rp.support()) {
 			rp.poly();
@@ -277,6 +270,12 @@ function f1() {
 		}
 	}(this));
 	/*end ASYNC CSS FILES*/
+	/* IMG ZOOMER*/
+	$(".img-zoomer").elevateZoom({
+		zoomType: "lens",
+		lensShape: "round",
+		lensSize: 200
+	});
 }
 /*runs everything after page loads*/
 window.onload = f1;

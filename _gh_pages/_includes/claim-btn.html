@@ -11,6 +11,8 @@
 </style>
 <p class="disclaimer-copy"><small><em><i class="fa fa-exclamation-circle"></i> After submitting this form your item will be reserved and you will receive an invoice from Erin with instructions on how to complete payment. Item claims are procesed in the order they are received. First come, first served!</em></small></p>
 <form action="https://getsimpleform.com/messages?form_api_token=62d51cd90333ae5fb9910e4a636808ec" method="POST" enctype="multipart/form-data">
+	<!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+	<input type='hidden' name='redirect_to' value='{{ site.url }}/thank-you' />
 	<div class="form-group" style="display: none">
 		<label for="ItemID" class="col-lg-3 control-label txt-right nonono" style="color: #999999;" itle="Don't Change this - it automatically populates!">Item ID:</label>
 		<div class="col-lg-9">
@@ -108,13 +110,13 @@
 	</div>
 	<div class="clearfix"></div>
 	<div class="form-group">
-		<label for="Email-Opt" class="col-lg-3 control-label txt-right">Sign Me Up to be first to know about New Releases!</label>
-		<div class="col-lg-9">
-			<input type="radio" name="Email-Opt" value="Cheapest" checked> YES!
-			<input type="radio" name="Email-Opt" value="Fastest"> No Thanks
+		<label for="Newsletter" class="col-xs-12 control-label txt-left">Subscribe to our newsletter to be first to know about new releases!</label>
+		<div class="col-lg-9 col-lg-offset-3">
+			<input type="radio" name="Newsletter" value="YES" checked> YES!
+			<input type="radio" name="Newsletter" value="No thanks"> No Thanks
 		</div>
 	</div>
-	<div class="clearfix"></div>
+	<div class="clearfix" style="padding-bottom: 15px;"></div>
 	<div class="form-group">
 		<div class="col-lg-offset-3 col-lg-9">
 			<button type="submit" value="send" class="btn btn-danger">
