@@ -1483,12 +1483,12 @@ d[0].offsetTop||15===d[0].offsetTop;d.remove();a.fixedPosition=e}f.extend(b.defa
 		var $container;
 		var settings = {
 			threshold: 0,
-			failure_limit: 0,
+			failure_limit: 25,
 			event: "scroll",
 			effect: "fadeIn",
 			container: window,
 			data_attribute: "original",
-			skip_invisible: true,
+			skip_invisible: false,
 			appear: null,
 			load: null,
 			placeholder: "data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -1884,11 +1884,14 @@ function f1() {
 	/* LAZYLOAD*/
 	/**/
 	$(function() {
-		$("img.lazyload").show().lazyload({
+		$("img.lazyload").lazyload({
 			effect: "fadeIn",
-			skip_invisible: true,
-			threshold: 250
+			skip_invisible: false,
+			threshold: 800
 		});
+	});
+	$(window).load(function() {
+		$("html,body").trigger("scroll");
 	});
 	/*end LAZY*/
 	/*ASYNC CSS FILES*/

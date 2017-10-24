@@ -145,11 +145,14 @@ function f1() {
 	/* LAZYLOAD*/
 	/**/
 	$(function() {
-		$("img.lazyload").show().lazyload({
+		$("img.lazyload").lazyload({
 			effect: "fadeIn",
-			skip_invisible: true,
-			threshold: 250
+			skip_invisible: false,
+			threshold: 800
 		});
+	});
+	$(window).load(function() {
+		$("html,body").trigger("scroll");
 	});
 	/*end LAZY*/
 	/*ASYNC CSS FILES*/

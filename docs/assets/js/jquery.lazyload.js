@@ -19,12 +19,12 @@
 		var $container;
 		var settings = {
 			threshold: 0,
-			failure_limit: 0,
+			failure_limit: 25,
 			event: "scroll",
 			effect: "fadeIn",
 			container: window,
 			data_attribute: "original",
-			skip_invisible: true,
+			skip_invisible: false,
 			appear: null,
 			load: null,
 			placeholder: "data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
