@@ -24,7 +24,7 @@
 			effect: "fadeIn",
 			container: window,
 			data_attribute: "original",
-			skip_invisible: false,
+			skip_invisible: true,
 			appear: null,
 			load: null,
 			placeholder: "data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="

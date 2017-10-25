@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 				src: ['_gh_pages/assets/js/jquery.min.js',
 					'_gh_pages/assets/js/bootstrap.min.js',
 					'_gh_pages/assets/js/modernizr.js',
+					'_gh_pages/assets/js/pollyfill.min.js',
 					'_gh_pages/assets/js/jquery.fancybox.pack.js',
 					'_gh_pages/assets/js/jquery.mobile.custom.min.js',
 					'_gh_pages/assets/js/ls.respimg.min.js',

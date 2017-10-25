@@ -142,19 +142,6 @@ function f1() {
 		s.parentNode.insertBefore(tk, s);
 	})(document);
 	/*end TYPEKIT*/
-	/* LAZYLOAD*/
-	/**/
-	$(function() {
-		$("img.lazyload").lazyload({
-			effect: "fadeIn",
-			skip_invisible: false,
-			threshold: 800
-		});
-	});
-	$(window).load(function() {
-		$("html,body").trigger("scroll");
-	});
-	/*end LAZY*/
 	/*ASYNC CSS FILES*/
 	/*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
 	(function(w) {
@@ -279,6 +266,21 @@ function f1() {
 		lensShape: "round",
 		lensSize: 200
 	});
+	/*end IMG ZOOMER*/
+	/* LAZYLOAD*/
+	/**/
+	$(function() {
+		$("img.lazyload").lazyload({
+			load: function() {
+				$(window).trigger('scroll');
+			},
+			effect: "fadeIn",
+			skip_invisible: true,
+			failure_limit: 10,
+			threshold: 240
+		});
+	});
+	/*end LAZY*/
 }
 /*runs everything after page loads*/
 window.onload = f1;
