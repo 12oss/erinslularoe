@@ -27,14 +27,16 @@ description: Shop all of Erin's LuLaRoe Valentine's Collection today!
 		font-weight: 300 !important;
 	}
 
-	.img.lazyload {
+	img.lazyload {
 		transition: .9s all;
 		-webkit-transition: .9s all;
+		max-width: 100%;
+		height: auto !important;
 	}
 
 	.s-container:hover img.lazyload,
 	.s-container:focus img.lazyload,
-	.s-container:active img.lazyload {
+	.s-container:active img.lazyload{
 		filter: blur(1.5px) grayscale(1) brightness(.4);
 		-webkit-filter: blur(1.5px) grayscale(1) brightness(.4);
 		transition: .4s all;
@@ -100,12 +102,12 @@ description: Shop all of Erin's LuLaRoe Valentine's Collection today!
 			<!-- KIDS LEGGINGS -->
 			<div class="col-xs-6 col-sm-3">
 				<div class="s-container">
-					<a href="{{ site.baseurl }}/collections/valentines/leggings/kids-sm/">
-						<img src="{{ site.baseurl }}/styles/images/kids-leggings.jpg" alt="Kids' Leggings" width="100%">
+					<a href="{{ site.baseurl }}/collections/valentines/leggings/tween/">
+						<img class="lazyload" data-original="{{ site.baseurl }}/collections/images/vday-tween-leggings.jpg" alt="Kids' Leggings" width="100%">
 						<button class="btn btn-sm btn-danger hidden-btn">VIEW ALL</button>
 						<div class="style-inventory">
 							<h4>Tween Leggings</h4>
-							<h5>{{ site.categories.valentines-leggings-kids | size }} Pieces</h5>
+							<h5>{{ site.categories.valentines-leggings-tween | size }} Pieces</h5>
 							<button class="m-btn-center visible-xs btn btn-sm btn-danger">TWEEN LEGGINGS</button>
 						</div>
 					</a>
@@ -116,7 +118,7 @@ description: Shop all of Erin's LuLaRoe Valentine's Collection today!
 			<div class="col-xs-6 col-sm-3">
 				<div class="s-container">
 					<a href="{{ site.baseurl }}/collections/valentines/leggings/">
-						<img src="{{ site.baseurl }}/styles/images/leggings.jpg" alt="Leggings" width="100%">
+						<img class="lazyload" data-original="{{ site.baseurl }}/collections/images/vday-adult-leggings.jpg" alt="Leggings" width="100%">
 						<button class="btn btn-sm btn-danger hidden-btn">VIEW ALL</button>
 						<div class="style-inventory">
 							<h4>Leggings</h4>
